@@ -1,0 +1,63 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog
+		id="idTransDialogChange"
+		contentWidth= "600px"
+		contentHeight= "300px"
+		resizable= "true"
+		title="Save Transport"
+		draggable="true">
+		<content>
+			<f:SimpleForm>
+				<Label text = "Transport List" />
+				<Input id = "inTranList"/>
+					<Label text="Team"/>
+				           <ComboBox id="vTeam" width="5cm" showSecondaryValues="true" items="{path: 'jData>/team/'}">
+                                <core:Item key="{jData>key}" text="{jData>text}"/>
+                           </ComboBox>
+				            <Label text="Project"/>
+								<ComboBox id="vchangeProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}">
+                                 <core:Item key="{ZprojId}" text="{ZprDesc}"/>
+                                 </ComboBox>
+                                 
+				<Label text = "Ticket" />
+				<Input id = "inTicket"/>
+				<Label text = "Specification Name" />
+				<Input id = "inFolder"/>
+				<Label text = "Sequence No" />
+				<Input id = "inSeqnr"/>
+				<Label text = "Country" />
+				<Input id = "inLand1"/>
+				<Label text = "Transport Request" />
+				<Input id = "inTrkorr"/>
+				<Label text = "Prev. Transport Request" />
+				<Input id = "inTrkorrPrev"/>
+				<Label text = "Dev. Type" />
+				<Label text="Development Type"/>
+				      <ComboBox id="vdev" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevMethod/'}" selectionChange="handle_projId_combo">
+                                <core:Item key="{jData>key}" text="{jData>text}"/>
+                           </ComboBox>
+				<Label text = "Owner" />
+				<!--<Input id = "inAs4user"/>-->
+				<ComboBox id="inAs4user" width="7cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}" selectionChange="handle_projId_combo">
+                                 <core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+                                 </ComboBox>
+				<Label text = "Comments" />
+				<Input id = "inComments"/>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button
+				text="Save"
+				type="Accept"
+				press="fSaveChangeTrans"/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancel"
+				press="onTransDialogChange"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

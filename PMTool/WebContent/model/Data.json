@@ -1,0 +1,61 @@
+{
+	"DevType": [
+ {
+ 	"key": "L",
+ 	"text": "Localizing (standard customizing)"
+ },
+ {
+    "key": "RN",
+    "text": "Report - new"
+ },
+ {
+  "key": "IN", 
+  "text": "Interface - new"
+ }
+ ],
+ 
+ "team": 
+ [
+ 	{
+ 	"key": "01", 
+  "text": "France"
+ 	},
+ 	{
+ 	"key": "02", 
+    "text": "India"
+ 	},
+ 	{
+ 	"key": "03", 
+    "text": "Unknown"
+ 	}
+ ],
+ 
+ "DevMethod":[
+ 	{
+ 	"key":  "ABAP",
+ 	"text": "ABAP"	
+ 	},
+ 	{
+    "key":  "DDIC",
+ 	"text": "DDIC"
+ 	},
+ 	{
+ 	"key":  "STREAM",
+ 	"text": "STREAM"
+ 	},
+ 	{
+ 	"key":  "SMART",
+ 	"text": "SMART"
+ 	},
+ 	{
+ 	"key":  "ADOBE",
+ 	"text": "ADOBE"
+ 	},
+ 	{
+ 	"key":  "SCRIPT",
+ 	"text": "SCRIPT"
+ 	}
+ 	
+ 	]
+ 
+ }

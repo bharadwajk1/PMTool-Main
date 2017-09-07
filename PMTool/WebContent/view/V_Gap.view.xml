@@ -1,0 +1,95 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table" controllerName="PMTool.controller.V_Gap">
+		<App>
+		<pages> <Page id="Gap_page" title="Gap Master" showNavButton="true" navButtonPress="fGoToTarget_1" showHeader="true" enableScrolling="true" showFooter="false">
+				<content>
+				   <!--<table:Table id="Gap_Table" rows="{/GapMasterSet}" selectionMode="Single"  ariaLabelledBy="title" enableColumnReordering="true" visibleRowCount="13">-->
+						<!--<table:toolbar id="Gap_Toolbar">-->
+			   <!--         <Toolbar>-->
+			                <!--<content>-->
+			    <!--            <Title id="title" text="Gap Master"/>-->
+							<!--<ToolbarSpacer/>-->
+							<Button icon="sap-icon://copy" text="Copy" press="fCopyGap" visible="true" id="idGapCopy" />
+							<Button icon="sap-icon://edit" text="Change" press="fChangeGap" visible="true" id="idgapChange" />
+							<Button icon="sap-icon://delete" text="Delete" press="fDeleteGap" visible="true" id="idgapDelete" />
+							<!--</content>-->
+			        <!--    </Toolbar>-->
+			        <!--</table:toolbar>-->
+			     <table:Table id="Gap_Table" selectionMode="Single" selectionBehavior="Row">
+			<table:columns>
+				
+				<table:Column width="11rem">
+						<Label text="Project Id"/>
+						<table:template>
+							<Text id = "ProjId" text="{ZprojId}" />
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Gap Number"/>
+						<table:template>
+							<Text id = "Gapnum" text="{ZgapNo}"/>
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Domain"/>
+						<table:template>
+							<Text id = "Domain" text="{Zdomain}"/>
+						</table:template>
+					</table:Column>	
+					
+			    <table:Column width="11rem">
+						<Label text="Specification Name"/>
+						<table:template>
+							<Text id = "Specname" text="{ZspecName}"/>
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="User Name"/>
+						<table:template>
+							<Text id = "User" text="{ZgapResp}"/>
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Gap Title"/>
+						<table:template>
+							<Text id = "Title" text="{Zgaptitle}"/>
+						</table:template>
+				</table:Column>	
+				
+				<table:Column width="11rem">
+						<Label text="Gap status"/>
+						<table:template>
+							<Text id = "Status" text="{ZgapStatus}"/>
+						</table:template>
+				</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Gap Description"/>
+						<table:template>
+							<Text id = "Desc" text="{Zgapdesc}"/>
+						</table:template>
+				</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Criticality"/>
+						<table:template>
+							<Text id = "Critical" text="{ZbusiPriority}"/>
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Solution"/>
+						<table:template>
+							<Text id = "Solution" text="{Zsolution}"/>
+						</table:template>
+				</table:Column>	
+			</table:columns>
+			</table:Table>
+			</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

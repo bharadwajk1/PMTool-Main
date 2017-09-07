@@ -1,0 +1,72 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PMTool.controller.V_Trans_Create">
+	<App>
+		<pages>
+			<Page title="Transport Tracker Creation" showNavButton="true" navButtonPress="f_GotoTransTracker">
+				<content>
+				    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form0" maxContainerCols="2" width="auto">
+				    	<sap.ui.layout.form:content>
+				        	<Label text="Team"/>
+				        	<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="25%" id="idTeam" type="Number" valueHelpRequest="fTransTeamF4" showTableSuggestionValueHelp="false"/>-->
+				           	<Select id="vTeam" width="5cm" showSecondaryValues="true" items="{path: 'jData>/team/'}">
+                                <core:Item key="{jData>key}" text="{jData>text}"/>
+                           </Select>
+				            <Label text="Project"/>
+				            <!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="idProject"/>-->
+								<!--<Select id="idProject"-->
+								<!--	items="{-->
+								<!--		path: '/ProjMasterSet',-->
+								<!--		sorter: { path: 'ZprojId' }-->
+								<!--	}">-->
+								<!--	<core:Item key="{ZprojId}" text="{ZprDesc}" />-->
+								<!--</Select>				            -->
+								<Select id="vcreateProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}">
+                                 <core:Item key="{ZprojId}" text="{ZprDesc}"/>
+                                 </Select>
+				            
+				            <Label text="Ticket Number"/>
+				            <Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="40%" id="idTicketNumber"/>
+				            <Label text="Specification Name"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="60%" id="idSpecificationName"/>
+				        	<Label text="Sequence Number"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="idSequenceNumber"/>
+				        	<Label text="Country"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="idCountry"/>
+				        	<Label text="Transport Request"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="40%" id="idTransportRequest"/>
+				        	<Label text="Previous Request"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="40%" id="idPreviousRequest"/>
+				   <!--     	<Label text="Development Type"/>-->
+				        	<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="idDevelopmentType" maxLength="10"/>-->
+				   <!--     	<InputListItem>-->
+							<!--	<Select-->
+							<!--		change ="handleDevTyp" >-->
+							<!--		<core:Item key="ADOBE" text="Adobe Form" />-->
+							<!--		<core:Item key="SS" text="Stream Server" />-->
+							<!--		<core:Item key="DD" text="DDIC" />-->
+							<!--	</Select>-->
+							<!--</InputListItem>-->
+							<Label text="Development Type"/>
+				        	<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="25%" id="idTeam" type="Number" valueHelpRequest="fTransTeamF4" showTableSuggestionValueHelp="false"/>-->
+				           <Select id="vdev" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevMethod/'}">
+                                <core:Item key="{jData>key}" text="{jData>text}"/>
+                           </Select>
+				        	<Label text="Owner"/>
+				        	<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="12%" id="idOwner"/>-->
+				        	<Select id="idOwner" width="7cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+                                 <core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+                                 </Select>
+				        </sap.ui.layout.form:content> 
+				    </sap.ui.layout.form:SimpleForm>
+				</content>
+				<footer>
+			    <Bar id="__bar0">
+			        <contentRight>
+			            <Button text="Save" width="100px" id="idGapSave" type="Accept" icon="sap-icon://save" press="fSaveTrans"/>
+			            <Button text="Cancel" width="100px" id="idGapCancel" icon="sap-icon://cancel" type="Reject" press="f_GotoTransTracker"/>
+			        </contentRight>
+			    </Bar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

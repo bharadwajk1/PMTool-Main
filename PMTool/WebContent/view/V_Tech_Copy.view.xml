@@ -1,0 +1,149 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="PMTool.controller.V_Tech_Copy">
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Tech Tracker Copy" showNavButton="true" navButtonPress="f_GotoTech">
+				<content>
+					<ScrollContainer horizontal="true" vertical="true" focusable="true">
+						<table:Table id="idTechTable" rows="{/TechTrackerSet}" selectionMode="Single" width="200%">
+							<table:toolbar>
+								<Toolbar>
+									<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" type="Accept" visible="false"/>
+									<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" type="Reject" visible="false"/>
+								</Toolbar>
+							</table:toolbar>
+							<table:columns>
+								<table:Column width="auto">
+									<Text text="Product ID" width="80px"/>
+									<table:template>
+										<Input id="iprojId" value="{ZprojId}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Gap No"/>
+									<table:template>
+										<Input id="igapNo" value="{ZgapNo}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Spec Name"/>
+									<table:template>
+										<Input id="ispecName" value="{ZspecName}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Spec Version"/>
+									<table:template>
+										<Input id="ispecVer" value="{ZspecVersion}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Seq No"/>
+									<table:template>
+										<Input id="iseqno" value="{ZseqNo}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Spec Description No"/>
+									<table:template>
+										<Input id="ispecDesc" value="{ZpecDesc}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Domain"/>
+									<table:template>
+										<Input id="idomain" value="{Zdomain}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Team"/>
+									<table:template>
+										<Input id="iteam" value="{Zteam}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Category"/>
+									<table:template>
+										<Input id="icategory" value="{Zcategory}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Ticket No"/>
+									<table:template>
+										<Input id="iticketNo" value="{ZticketNo}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Dev Status"/>
+									<table:template>
+										<Input id="istatusDev" value="{ZstatusDev}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Dev Scope"/>
+									<table:template>
+										<Input id="idevScope" value="{ZdevScope}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Dev Type"/>
+									<table:template>
+										<Input id="idevType" value="{ZdevType}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Complexity"/>
+									<table:template>
+										<Input id="icomplexity" value="{Zcomplexity}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Assigned By"/>
+									<table:template>
+										<Input id="iassignedBy" value="{ZassignedBy}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Onsite Owner Name"/>
+									<table:template>
+										<Input id="iownerNmOnsite" value="{OwnerNmOnsite}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Offshore Owner Name"/>
+									<table:template>
+										<Input id="iownerOffsh" value="{OwnerNmOffshe}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Assign Date"/>
+									<table:template>
+										<Input id="iassignDate" value="{ZassignDate}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Plan Start Date"/>
+									<table:template>
+										<Input id="iplanStart" value="{ZplanStart}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Plan End Date"/>
+									<table:template>
+										<Input id="iplanEnd" value="{ZplanEnd}" editable="false"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="auto">
+									<Text text="Developer"/>
+									<table:template>
+										<Input id="ideveloper" value="{Zdeveloper}" editable="false"/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:Table>
+					</ScrollContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

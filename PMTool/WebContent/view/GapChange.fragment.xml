@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog
+		id="idGapDialogChange"
+		contentWidth= "600px"
+		contentHeight= "300px"
+		resizable= "true"
+		title="Save Gap"
+		draggable="true">
+		<content>
+			<f:SimpleForm>
+				<Label text = "Project Id" />
+				<!--<ComboBox id="inProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}">-->
+    <!--                             <core:Item key="{ZprojId}" text="{ZprDesc}"/>-->
+    <!--                             </ComboBox>-->
+				<Input id = "inProjectId" enabled = "false"/>
+				<Label text = "Gap No" />
+				<Input id = "inGapNo" enabled = "false"/>
+				<Label text = "Domain" />
+				<Input id = "inDomain" maxLength="3"/>
+				<Label text = "Specification Name" />
+				<Input id = "inSpecificationName" maxLength="20"/>
+				<Label text = "User Name" />
+				<Input id = "inUserName" maxLength="12"/>
+				<Label text = "Gap Title" />
+				<Input id = "inGapTitle" maxLength="50"/>
+				<Label text = "Gap Status" />
+				<Input id = "inGapStatus" maxLength="10"/>
+				<Label text = "Gap Description" />
+				<Input id = "inGapDesc" maxLength="100"/>
+				<Label text = "Criticality" />
+				<Input id = "inCriticality" maxLength="2"/>
+				<Label text = "Solution" />
+				<Input id = "inSolution" maxLength="50"/>
+				</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button
+				text="Save"
+				type="Accept"
+				press="fSaveChangeGap"/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancel"
+				press="onCloseChangeDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

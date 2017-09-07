@@ -1,0 +1,198 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PMTool.controller.V_Trans">
+	<App>
+		<pages>
+		<Page id="trans_page" title="Transport Tracker" showNavButton="true" navButtonPress="fGoToTarget_1" showHeader="true" enableScrolling="false" showFooter="false">
+			<content>
+					<Button icon="sap-icon://edit" text="Edit" press="fChangeTrans" visible="true" id="idTransChange" />
+					<Button icon="sap-icon://delete" text="Delete" press="fDeleteTrans" visible="true" id="idTransDelete" />
+					<Button icon="sap-icon://copy" text="Copy" press="fCopyTrans" visible="true" id="idTransCopy" />
+					<Button icon="sap-icon://download" text="Export" press="fTransDownload" visible="true" id="idDownload" />
+				<!--<table:Table id="Trans_Table" -->
+				<!--	 		rows="{/TransTrackerSet}" -->
+				<!--	 		selectionMode="Single" -->
+				<!--	  		visibleRowCount="10" -->
+				<!--	  		ariaLabelledBy="title" -->
+				<!--	 		enableColumnReordering="true" -->
+				<!--	 		selectionBehavior="Row"-->
+				<!--	 		visibleRowCountMode="Fixed">-->
+					<table:Table id="Trans_Table" selectionMode="Single" selectionBehavior="Row" visibleRowCount="13">
+				<!--<table:Table id="Trans_Table" selectionMode="Single" visibleRowCount="7" ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">-->
+				
+						<!--<table:toolbar id="Trans_Toolbar">-->
+			   <!--         <Toolbar>-->
+			   <!--             <content>-->
+			   <!--             <Title id="title" text="Transport Tracker"/>-->
+						<!--	<ToolbarSpacer/>-->
+						<!--	<Button icon="sap-icon://copy" text="Copy" press="fCopy_Trans" visible="true" id="idCopy"/>-->
+						<!--	<Button icon="sap-icon://edit" text="Change" press="fChange_Trans" visible="true" id="idChange"/>-->
+						<!--	<Button icon="sap-icon://delete" text="Delete" visible="true" id="idDelete" press="fDeleteFromTrans"/>-->
+						<!--	<Button icon="sap-icon://save" text="Save" visible="false" id="idSave" press="fSaveChangeTrans"/>-->
+						<!--	<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idCancel" press="fCancelFromTrans"/>-->
+						<!--	<Button id="idDownload" icon="sap-icon://download" press="fTransDownload"/>-->
+			   <!--             </content>-->
+			   <!--         </Toolbar>-->
+			   <!--     </table:toolbar>-->
+				
+			<table:columns>
+				
+				<!--<table:Column width="11rem">-->
+				<!--		<Label text="Object Number"/>-->
+				<!--		<table:template>-->
+				<!--			<Input value="{Objnr}" editable="false"/>-->
+				<!--		</table:template>-->
+				<!--	</table:Column>	-->
+					
+				<table:Column width="11rem">
+						<Label text="Tran List"/>
+						<table:template>
+							<Text id = "id1" text="{TranList}"/>
+						</table:template>
+					</table:Column>	
+					
+				<table:Column width="11rem">
+						<Label text="Team" id="idTeam"/>
+						<table:template>
+							<Text id = "id2" text="{Team}"/>
+						</table:template>
+					</table:Column>					
+					
+				<table:Column width="11rem">
+						<Label text="Project Id"/>
+						<table:template>
+							<Text id = "id3" text="{Project}"/>
+						</table:template>
+					</table:Column>					
+					
+				<table:Column width="20rem">
+						<Label text="Ticket Number"/>
+						<table:template>
+							<Text id = "id4" text="{Ticket}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Spec. Name"/>
+						<table:template>
+							<Text id = "id5" text="{Folder}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Sequence Number"/>
+						<table:template>
+							<Text id = "id6" text="{Seqnr}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Country"/>
+						<table:template>
+							<Text id = "id7" text="{Land1}"/>
+						</table:template>
+					</table:Column>
+					
+				<table:Column width="11rem">
+						<Label text="Transport Request"/>
+						<table:template>
+							<Text id = "id8" text="{Trkorr}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Previous Request"/>
+						<table:template>
+							<Text id = "id9" text="{TrkorrPrev}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Dev. Type"/>
+						<table:template>
+							<Text id = "id10" text="{Devtype}"/>
+						</table:template>
+					</table:Column>					
+					
+				<table:Column width="11rem">
+						<Label text="Owner"/>
+						<table:template>
+							<Text id = "id11" text="{As4user}"/>
+						</table:template>
+					</table:Column>
+
+				<table:Column width="11rem">
+						<Label text="Comments"/>
+						<table:template>
+							<Text id = "id12" text="{Comments}"/>
+						</table:template>
+					</table:Column>
+					
+				<table:Column width="11rem">
+						<Label text="Deletion indicator"/>
+						<table:template>
+							<Text id = "id13" text="{Delflg}"/>
+						</table:template>
+					</table:Column>
+					
+				<table:Column width="11rem">
+						<Label text="Created By"/>
+						<table:template>
+							<Text id = "id14" text="{Ernam}"/>
+						</table:template>
+					</table:Column>
+					
+					<!--<table:Column width="11rem" hAlign="Center">-->
+					<!--	<Label text="Created On"/>-->
+					<!--	<table:template>-->
+					<!--		<Text text="{path: 'Erdat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+					<!--		<table:DatePicker value="{-->
+					<!--			path: 'Erdat',-->
+					<!--			type: 'sap.ui.model.type.Date',-->
+					<!--			formatOptions: {source: {pattern: 'timestamp'}}-->
+					<!--		}"/>-->
+					<!--	</table:template>-->
+					<!--</table:Column>-->
+					
+					<!--<table:Column width="11rem">-->
+					<!--	<Label text="Created On" />-->
+					<!--	<table:template>-->
+					<!--		<Text id = "id15" text="{Erdat}"/>-->
+					<!--	</table:template>-->
+					<!--</table:Column>					-->
+					
+				<!--<table:Column width="11rem">-->
+				<!--		<Label text="Created time" />-->
+				<!--		<table:template>-->
+				<!--			<Input value="{Ertim}"-->
+				<!--			 editable="false"/>-->
+				<!--		</table:template>-->
+				<!--	</table:Column>-->
+					
+				<table:Column width="11rem">
+						<Label text="Changed by"/>
+						<table:template>
+							<Text id = "id16" text="{Chnam}"/>
+						</table:template>
+					</table:Column>
+
+				<!--<table:Column width="11rem">-->
+				<!--		<Label text="Changed date" />-->
+				<!--		<table:template>-->
+				<!--			<Text id = "id17" text="{Chdat}"/>-->
+				<!--		</table:template>-->
+				<!--	</table:Column>					-->
+					
+				<!--<table:Column width="11rem">-->
+				<!--		<Label text="Changed time" />-->
+				<!--		<table:template>-->
+				<!--			<Input value="{Chtim}"-->
+				<!--			 editable="false"/>-->
+				<!--		</table:template>-->
+				<!--	</table:Column>					-->
+					
+			</table:columns>
+			</table:Table>
+			</content>
+		</Page>
+		</pages>
+	</App>
+</mvc:View>

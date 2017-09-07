@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog
+		id="idDevDialogChange"
+		contentWidth= "600px"
+		contentHeight= "300px"
+		resizable= "true"
+		title="Save Dev"
+		draggable="true">
+<content>
+			<f:SimpleForm>
+				<Label text = "Developer Id" />
+				<Input id  = "chDeveloperId" enabled = "false"/>
+				<Label text = "Developer Name" />
+				<Input id = "chDeveloperName" maxLength="30"/>
+				<Label text = "Active" />
+				<Checkbox id = "chActive"/>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button
+				text="Save"
+				type="Accept"
+				press="fSaveChangeDev"/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancel"
+				press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="PMTool.controller.v_proj_init"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:smartTable="sap.ui.comp.smarttable" >
+	<App>
+		<pages>
+			<Page title="Project Master" showNavButton="true" navButtonPress="fGoto_Target1">
+				<content>
+			<!--		<smartTable:SmartTable id="LineItemsSmartTable" entitySet="LineItemsSet" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" useVariantManagement="false" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" app:useSmartField="true" class="sapUiResponsiveContentPadding">-->
+			<!--	 layout data used to make the table growing but the filter bar fixed -->
+			<!--	<smartTable:layoutData>-->
+			<!--			<FlexItemData growFactor="1" baseSize="0%"/>-->
+			<!--	</smartTable:layoutData>-->
+			<!--</smartTable:SmartTable>--->
+			 <Button text="Create" width="100px" id="idDevCreate" press="fGoToDevCreate"  icon="sap-icon://create"/>
+				    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Change" width="100px" id="idDevChange" press="fChangeDev" icon="sap-icon://edit"/>
+				    <Button text="Delete" width="100px" id="idDevDelete" icon="sap-icon://delete" press="fDeleteDevEntry"/>
+				    <Button text="Save" width="90px" id="idDevSave" icon="sap-icon://save" press="fDevUpdateOrSave"/><Button text="Cancel" width="100px" id="idDevCancel" icon="sap-icon://cancel" press="fGoToTarget_1"/>
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{/DevMasterSet}" width="85%" mode="MultiSelect">
+				        <items>
+				            <ColumnListItem id="idDevItem" type="Active">
+				                <cells>
+				                    <Text text="{Zdeveloper}" id="__text0"/>
+				                    <Text text="{ZdeveloperName}" id="__text1"/>
+				                    <Text text="{Zactive}" id="__text2"/></cells>
+				            </ColumnListItem></items>
+				        <columns>
+				            <Column id="__column0">
+				                <header>
+				                    <Label text="Developer ID" id="__label0"/>
+				                </header>
+				            </Column>
+				            <Column id="__column1">
+				                <header>
+				                    <Label text="Developer Name" id="__label1"/>
+				                </header>
+				            </Column>
+				            <Column id="__column2">
+				                <header>
+				                    <Label text="Active" id="__label2"/>
+				                </header>
+				            </Column></columns>
+				        <customData>
+				            <core:CustomData key="w5g.dt.editable" value="false" id="__data2"/>
+				        </customData></Table>
+			</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

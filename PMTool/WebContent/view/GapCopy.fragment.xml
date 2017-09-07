@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog
+		id="idGapDialogCopy"
+		contentWidth= "600px"
+		contentHeight= "300px"
+		resizable= "true"
+		title="Save Gap"
+		draggable="true">
+		<content>
+			<f:SimpleForm>
+				<Label text = "Project Id"  required="true"/>
+				<!--<Input id = "CProjectId" maxLength="3"/>-->
+				<ComboBox id="CProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}">
+                                 <core:Item key="{ZprojId}" text="{ZprDesc}"/>
+                                 </ComboBox>
+				<Label text = "Gap No"  required="true" />
+				<Input id = "CGapNo" maxLength="6"/>
+				<Label text = "Domain" />
+				<Input id = "CDomain" maxLength="3"/>
+				<Label text = "Specification Name" />
+				<Input id = "CSpecificationName" maxLength="20"/>
+				<Label text = "User Name" />
+				<Input id = "CUserName" maxLength="12"/>
+				<Label text = "Gap Title" />
+				<Input id = "CGapTitle" maxLength="50"/>
+				<Label text = "Gap Status" />
+				<Input id = "CGapStatus" maxLength="10"/>
+				<Label text = "Gap Description" />
+				<Input id = "CGapDesc" maxLength="100"/>
+			    <Label text = "Criticality" />
+				<Input id = "CCriticality" maxLength="2"/>
+				<Label text = "Solution" />
+				<Input id = "CSolution" maxLength="50"/>
+				</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button
+				text="Save"
+				type="Accept"
+				press="fSaveCopyGap"/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancel"
+				press="onCloseCopyDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
