@@ -4,12 +4,7 @@
 		<pages>
 			<Page title="Project Master" showNavButton="true" navButtonPress="fGoto_Target1">
 				<content>
-			<!--		<smartTable:SmartTable id="LineItemsSmartTable" entitySet="LineItemsSet" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" useVariantManagement="false" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" app:useSmartField="true" class="sapUiResponsiveContentPadding">-->
-			<!--	 layout data used to make the table growing but the filter bar fixed -->
-			<!--	<smartTable:layoutData>-->
-			<!--			<FlexItemData growFactor="1" baseSize="0%"/>-->
-			<!--	</smartTable:layoutData>-->
-			<!--</smartTable:SmartTable>--->
+
 			 <Button text="Create" width="100px" id="idDevCreate" press="fGoToDevCreate"  icon="sap-icon://create"/>
 				    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Change" width="100px" id="idDevChange" press="fChangeDev" icon="sap-icon://edit"/>
 				    <Button text="Delete" width="100px" id="idDevDelete" icon="sap-icon://delete" press="fDeleteDevEntry"/>
