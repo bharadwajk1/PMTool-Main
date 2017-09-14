@@ -1,0 +1,110 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="ZNav.controller.vcreate_tech">
+	<App>
+		<pages>
+			<Page title="Tech Tracker creation" showNavButton="true" navButtonPress="fBackFromTechCreate">
+				<content>
+					<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="vcreatetech">
+						<sap.ui.layout.form:content>
+							<Label text="Project Id" required="true"/>
+							<!--<Input width="5%" id="vcreateProjectId"/>-->
+							<ComboBox id="vcreateProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}" selectionChange="handle_projId_combo">
+								<core:Item key="{ZprojId}" text="{ZprDesc}"/>
+							</ComboBox>
+							<Label text="Team" required="true"/>
+							<ComboBox id="vTeam" width="5cm" showSecondaryValues="true" items="{path: 'jData>/team/'}"
+							           selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							<Label text="Gap Number"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vcreateGapNumber"/>
+							<Label text="Specification Name" required="true"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatespec"/>
+							<Label text="Specification Version"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreateversion"/>
+							<Label text="Sequence Number"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreateSeq"/>
+							<Label text="Ticket Number" required="true"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="30%" id="vcreateticket"/>
+							<Label text="Development Type" required="true"/>
+							<ComboBox id="vcreatedev" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevType/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatedev" />-->
+							<!--<InputListItem id ="vcreatedev">-->
+							<!--	<Select>-->
+							<!--		<core:Item key= "L"	text = "Localizing (standard customizing)"/>-->
+							<!--		<core:Item key= "RN"	text = "Report - new"/>-->
+							<!--		<core:Item key= "IN"	text = "Interface - new"/>-->
+							<!--		<core:Item key= "CN"	text = "Conversion - new"/>-->
+							<!--		<core:Item key= "FN"	text = "Form - new"/>-->
+							<!--		<core:Item key= "EN"	text = "Enhancement - new"/>-->
+							<!--	</Select>-->
+							<!--</InputListItem>-->
+							
+							<Label text="Assigned by"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreateassby"/>
+							<Label text="Assigned date" required="true"/>
+								<Datepicker width = "20%" id="vcreateassdate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
+							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" dateFormat="" type="Date" width="20%" id="vcreateassdate"/>-->
+							<Label text="Planned Startdate" required="true"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
+							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatepsdate"/>-->
+							<Datepicker width = "20%" id="vcreatepsdate" placeholder="Select Date..." change="fCheckDate"/>
+							<Label text="Planned Enddate" required="true"/>
+							<Datepicker width = "20%" id="vcreatepedate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
+							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatepedate"/>-->
+							<Label text="Realstardate"/>
+							<Datepicker width = "20%" id="vcreatersdate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatersdate"/>-->
+							<Label text="RealEnddate"/>
+							<Datepicker width = "20%" id="vcreateredate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreateredate"/>-->
+							<Label text="Actual Code Days"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vactualCodeDays"/>
+							<Label text="STD Days"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vstdDays"/>
+							<Label text="Code Days" required="true"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vcodeDays"/>
+							<Label text="Testing Days" required="true"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vtestingDays"/>
+							<Label text="Review Days"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vreviewDays"/>
+							<Label text="ABAP Workload"/>
+							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vabapWorkload"/>
+
+							<Label text="Developer" required="true"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatedeveloper"/>-->
+							<ComboBox id="vcreatedeveloper" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+								<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+							</ComboBox>
+							
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+				</content>
+				<footer>
+					<Bar id="__bar0">
+						<contentRight>
+							<Button text="Save" width="100px" id="idtechSave" type="Accept" icon="sap-icon://save" press="fSavetech"/>
+							<Button text="Cancel" width="100px" id="idtechCancel" icon="sap-icon://cancel" type="Reject" press="fBackFromTechCreate"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

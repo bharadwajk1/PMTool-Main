@@ -1,0 +1,242 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Tech">
+	<App>
+		<pages><Page title="Technical Tracker" showNavButton="true" navButtonPress="fGoto_Target1" showHeader="true" showFooter="false">
+				<content>
+						<!--<Toolbar>-->
+						<!--	<content>-->
+						<!--		<ToolbarSpacer/>-->
+						<!--		<Button id="bCopy" text="Copy" icon="sap-icon://copy" press="fTechCopy" type="Emphasized"/>-->
+						<!--		<Button id="bChange" text="Change" icon="sap-icon://edit" press="fTechChange" type="Emphasized"/>-->
+						<!--		<Button id="bDelete" text="Delete" icon="sap-icon://delete" press="fTechDelete" type="Reject"/>-->
+						<!--		<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" type="Accept" visible="false"/>-->
+						<!--		<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" type="Reject" visible="false"/>-->
+						<!--		<Button id="bDownload" text="Download" icon="sap-icon://download" press="fTechDownload"/>-->
+						<!--	</content>-->
+						<!--</Toolbar>-->
+					
+					<!--<ScrollContainer horizontal="true" vertical="true" focusable="true">-->
+					<table:Table id="idTechTable" rows="{/TechTrackerSet}" selectionMode="Single" visibleRowCount="10" ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">
+						<table:toolbar>
+							<Toolbar>
+								<content>
+						<Button id="bCopy" text="Copy" icon="sap-icon://copy" press="fTechCopy"/>
+						<Button id="bChange" text="Edit" icon="sap-icon://edit" press="fTechChange"/>
+						<Button id="bDelete" text="Delete" icon="sap-icon://delete" press="fTechDelete"/>
+						<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" visible="false"/>
+						<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" visible="false"/>
+						<Button id="bDownload" text="Export" icon="sap-icon://download" press="fTechDownload"/>
+							</content>
+							</Toolbar>
+						</table:toolbar>
+						<table:columns>
+							<table:Column width="3cm">
+								<Text text="Project ID" width="80px"/>
+								<table:template>
+									<Text id="iprojId" text="{ZprojId}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Team"/>
+								<table:template>
+									<Text id="iteam" text="{Zteam}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Gap No"/>
+								<table:template>
+									<Text id="igapNo" text="{ZgapNo}"/>
+								</table:template>
+							</table:Column>
+							
+							<table:Column width="3cm">
+								<Text text="Spec Name"/>
+								<table:template>
+									<Text id="ispecName" text="{ZspecName}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Spec Version"/>
+								<table:template>
+									<Text id="ispecVer" text="{ZspecVersion}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Seq No"/>
+								<table:template>
+									<Text id="iseqno" text="{ZseqNo}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="6cm">
+								<Text text="Spec Desc"/>
+								<table:template>
+									<Text id="ispecDesc" text="{ZspecDesc}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Domain"/>
+								<table:template>
+									<Text id="idomain" text="{Zdomain}"/>
+								</table:template>
+							</table:Column>
+							
+							<table:Column width="3cm">
+								<Text text="Category"/>
+								<table:template>
+									<Text id="icategory" text="{Zcategory}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="5cm">
+								<Text text="Ticket No"/>
+								<table:template>
+									<Text id="iticketNo" text="{ZticketNo}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Dev Status"/>
+								<table:template>
+									<Text id="istatusDev" text="{ZstatusDev}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Dev Scope"/>
+								<table:template>
+									<Text id="idevScope" text="{ZdevScope}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Dev Type"/>
+								<table:template>
+									<Text id="idevType" text="{ZdevType}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Complexity"/>
+								<table:template>
+									<Text id="icomplexity" text="{Zcomplexity}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Assigned By"/>
+								<table:template>
+									<Text id="iassignedBy" text="{ZassignedBy}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Developer"/>
+								<table:template>
+									<Text id="ideveloper" text="{Zdeveloper}"/>
+								</table:template>
+							</table:Column>
+							<!--<table:Column width="4cm">-->
+							<!--	<Text text="Onsite Owner"/>-->
+							<!--	<table:template>-->
+							<!--		<Text id="iownerNmOnsite" text="{OwnerNmOnsite}"/>-->
+							<!--	</table:template>-->
+							<!--</table:Column>-->
+							<!--<table:Column width="4.5cm">-->
+							<!--	<Text text="Offshore Owner"/>-->
+							<!--	<table:template>-->
+							<!--		<Text id="iownerOffsh" text="{OwnerNmOffshe}"/>-->
+							<!--	</table:template>-->
+							<!--</table:Column>-->
+							<table:Column width="3cm">
+								<Text text="Assign Date"/>
+								<table:template>
+									<Text id="iassignDate" text="{path: 'ZassignDate',                  type: 'sap.ui.model.odata.type.DateTime',                  constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="4cm">
+								<Text text="Plan Start Date"/>
+								<table:template>
+									<Text id="iplanStart" text="{path: 'ZplanStart',                  type: 'sap.ui.model.odata.type.DateTime',                  constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="4cm">
+								<Text text="Plan End Date"/>
+								<table:template>
+									<Text id="iplanEnd" text="{path: 'ZplanEnd',                  type: 'sap.ui.model.odata.type.DateTime',                  constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="4cm">
+								<Text text="Real Start Date"/>
+								<table:template>
+									<Text id="irealStart" text="{path:'ZrealStart',                  type: 'sap.ui.model.odata.type.DateTime',                  constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Real End Date"/>
+								<table:template>
+									<Text id="irealEnd" text="{path:'ZrealEnd',                 type: 'sap.ui.model.odata.type.DateTime',                 constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="3cm">
+								<Text text="Close Date"/>
+								<table:template>
+									<Text id="icloseDate" text="{path:'ZcloseDate',                 type: 'sap.ui.model.odata.type.DateTime',                 constraints: {displayFormat: 'Date'}}"/>
+								</table:template>
+							</table:Column>
+							
+						
+							<table:Column width="2cm">
+								<Text text="STD Days"/>
+								<table:template>
+									<Text id="istdDays" text="{ZstdDays}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Code Days"/>
+								<table:template>
+									<Text id="icodeDays" text="{ZcodeDays}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Testing Days"/>
+								<table:template>
+									<Text id="itestDays" text="{ZtestDays}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="Review Days"/>
+								<table:template>
+									<Text id="irevDays" text="{ZrevDays}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="2cm">
+								<Text text="ABAP Workload"/>
+								<table:template>
+									<Text id="iabapWLoad" text="{ZabapWorkLoad}"/>
+								</table:template>
+							</table:Column>
+								<table:Column width="2cm">
+								<Text text="Actual Code Days"/>
+								<table:template>
+									<Text id="iactCodeDays" text="{ZactualDays}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+					<!--</ScrollContainer>-->
+					<!--<smartTable:SmartTable -->
+					<!--	id="idTechTable" -->
+					<!--	entitySet="TechTrackerSet" -->
+					<!--	smartFilterId="smartFilterBar" -->
+					<!--	tableType="Table" -->
+					<!--	useExportToExcel="true"-->
+					<!--	useVariantManagement="false" -->
+					<!--	useTablePersonalisation="true" -->
+					<!--	header="Line Items" -->
+					<!--	showRowCount="true"-->
+					<!--	persistencyKey="SmartTableAnalytical_Explored" -->
+					<!--	enableAutoBinding="true" -->
+					<!--	app:useSmartField="true" -->
+					<!--	class="sapUiResponsiveContentPadding">-->
+					<!-- layout data used to make the table growing but the filter bar fixed -->
+					<!--	<smartTable:layoutData>-->
+					<!--		<FlexItemData growFactor="1" baseSize="0%"/>-->
+					<!--	</smartTable:layoutData>-->
+					<!--</smartTable:SmartTable>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

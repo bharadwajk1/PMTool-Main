@@ -1,0 +1,89 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="idTechDialogCopy" contentWidth="800px" contentHeight="600px" resizable="true" title="Maintain Technical Tracker"
+		draggable="true">
+		<content>
+			<f:SimpleForm>
+				<Label text="Project"/>
+				<!--<Input id = "inProjectId"/>-->
+				<ComboBox id="inProjectIdCo" width="5cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}" 
+				                           selectionChange="handle_projId_combo">
+					<core:Item key="{ZprojID}" text="{ZprDesc}"/>
+				</ComboBox>
+				<Label text="Team"/>
+				<ComboBox id="inTeamCo" width="3cm" showSecondaryValues="true" items="{path: 'jData>/team/'}" 
+				                          selectionChange="handle_projId_combo">
+					<core:Item key="{jData>key}" text="{jData>text}"/>
+				</ComboBox>
+				<!--<Input id = "inTeamCo" width="4cm"/>-->
+				<Label text="Gap No"/>
+				<Input id="inGapNoCo" width="3cm"/>
+				<Label text="Spec Name"/>
+				<Input id="inSpecNameCo" width="4cm"/>
+				<Label text="Spec Version"/>
+				<Input id="inSpecVerCo" width="2cm"/>
+				<Label text="Seq Number"/>
+				<Input id="inSeqCo" width="2cm"/>
+				<Label text="Spec Desc"/>
+				<Input id="inSpecDescCo" width="8cm"/>
+				<Label text="Domain"/>
+				<Input id="inDomainCo" width="2cm"/>
+				<Label text="Category"/>
+				<Input id="inCategoryCo" width="3cm"/>
+				<Label text="Ticket"/>
+				<Input id="inTicketCo" width="5cm"/>
+				<Label text="Dev Status"/>
+				<Input id="inDevStatusCo" width="4cm"/>
+				<Label text="Dev Scope"/>
+				<Input id="inDevScopeCo" width="4cm"/>
+				<Label text="Dev Type"/>
+				<ComboBox id="inDevTypeCo" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevType/'}" selectionChange="handle_projId_combo">
+					<core:Item key="{jData>key}" text="{jData>text}"/>
+				</ComboBox>
+				<Label text="Complexity"/>
+				<Input id="inComplexityCo" width="4cm"/>
+				<Label text="Assigned by"/>
+				<Input id="inAssignedByCo" width="3cm"/>
+				<Label text="Developer"/>
+				<ComboBox id="inDeveloperCo" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+					<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+				</ComboBox>
+				<Label text="Assigned date"/>
+				<DatePicker id="inAssignedDateCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="Planned Start"/>
+				<DatePicker id="inPlanStartCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="Planned End"/>
+				<DatePicker id="inPlanEndCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="Real Start"/>
+				<DatePicker id="inRealStartCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="Real End"/>
+				<DatePicker id="inRealEndCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="Close Date"/>
+				<DatePicker id="inCloseDateCo" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
+					valueFormat="dd-MM-yyyy"/>
+				<Label text="STD Days"/>
+				<Input id="instdDaysCo" width="1.5cm"/>
+				<Label text="Code Days"/>
+				<Input id="incodeDaysCo" width="1.5cm"/>
+				<Label text="Testing Days"/>
+				<Input id="intestDaysCo" width="1.5cm"/>
+				<Label text="Review Days"/>
+				<Input id="inreviewDaysCo" width="1.5cm"/>
+				<Label text="ABAP Workload"/>
+				<Input id="inabapWLoadCo" width="1.5cm"/>
+				<Label text="Actual Code Days"/>
+				<Input id="inactCodeDaysCo" width="1.5cm"/>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button text="Save" type="Accept" press="fTechSave_Copy"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

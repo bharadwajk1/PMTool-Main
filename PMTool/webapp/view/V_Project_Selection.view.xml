@@ -1,0 +1,22 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Project_Selection">
+	<App>
+		<pages>
+		<Page title="Select ProjMaster Details" showNavButton="true" navButtonPress="fGotoProjMaintain">
+				<content>
+					<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form0" maxContainerCols="2" width="auto">
+				    	<sap.ui.layout.form:content>
+				            <Label text="Project Id"/>
+				            <Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="idproj"/>
+				        	<Label text=" "/>
+				             </sap.ui.layout.form:content>
+				             <Button text="Search" width="100px" id="idTransSubmit" type="Accept" icon="sap-icon://search" press="fGoToProjDetail" activeIcon="sap-icon://search"/>
+				    </sap.ui.layout.form:SimpleForm>
+				    <!--<Bar id="__bar0">-->
+						        <!--<contentLeft>-->
+						        <!--</contentLeft>-->
+						    <!--</Bar>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

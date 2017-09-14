@@ -1,0 +1,16 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Trans_Maintain">
+	<App>
+		<pages>
+			<Page title="Transport Tracker" showNavButton="true" showFooter="false" navButtonPress="fGoto_Target1">
+				<content>
+					<TileContainer>
+				        <tiles>
+				            <StandardTile title="Create" id="id_Create" press="fGoToCreate"/>
+				            <StandardTile title="Maintain" id="id_Maintain" press="fGoToSelection"/>
+				         </tiles>
+				    </TileContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

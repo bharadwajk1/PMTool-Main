@@ -1,0 +1,29 @@
+{
+	"DevType": [
+ {
+ 	"key": "L",
+ 	"text": "Localizing (standard customizing)"
+ },
+ {
+    "key": "RN",
+    "text": "Report - new"
+ },
+ {
+  "key": "IN", 
+  "text": "Interface - new"
+ }
+ ],
+ 
+ "team": 
+ [
+ 	{
+ 	"key": "01", 
+  "text": "France"
+ 	},
+ 	{
+ 	"key": "02", 
+  "text": "India"
+ 	}
+ ]
+ 
+}
