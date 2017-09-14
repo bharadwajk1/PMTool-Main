@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"PMTool/model/models"
+	"ZNav/model/models"
 ], function(UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("PMTool.Component", {
+	return UIComponent.extend("ZNav.Component", {
 
 		metadata: {
 			manifest: "json"

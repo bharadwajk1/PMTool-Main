@@ -4,14 +4,25 @@ sap.ui.define([
 	"sap/m/MessageToast"
 ], function(Controller, History, MessageToast) {
 	"use strict";
-	return Controller.extend("PMTool.controller.V_Tech_Copy", {
+	return Controller.extend("ZNav.controller.V_Tech_Copy", {
 
 		onInit: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("Route_Tech_Copy").attachPatternMatched(this._onObjectMatched, this);
 			// oRouter.attachRouteMatched(function(oEvent) {
 			// var team = oEvent.getParameter("arguments").team;
+			this.oTable = this.getView().byId("Dev_Table");
+			this.oModel = this.getView().getModel();
+			this.rebindTable();
+			
+			
 		},
+			rebindTable: function(){
+			this.oTable.bindRows({
+			path: "/TechTrackerSet",
+			Key:  ["Zobjnr"]
+			});
+			},
 
 		_onObjectMatched: function(oEvent) {
 
@@ -73,35 +84,49 @@ sap.ui.define([
 			}
 		},
 		fTechSave: function() {
+			
+			var oview = this.getView();
+			var dialog = new sap.m.BusyDialog({ text:'Please wait'});
+			 dialog.open();
+			 
 			/*create operation*/
 			var oModel = this.getView().getModel();
 			var oEntry = {};
-			oEntry.ZprojId = this.getView().byId("iprojId").getValue();
-			oEntry.ZgapNo = this.getView().byId("igapNo").getValue();
-			oEntry.ZspecName = this.getView().byId("ispecName").getValue();
-			oEntry.ZspecVersion = this.getView().byId("ispecVer").getValue();
-			oEntry.ZseqNo = this.getView().byId("iseqno").getValue();
-			oEntry.ZspecDesc = this.getView().byId("ispecDesc").getValue();
-			oEntry.Zdomain = this.getView().byId("idomain").getValue();
-			oEntry.Zteam = this.getView().byId("iteam").getValue();
-			oEntry.Zcategory = this.getView().byId("icategory").getValue();
-			oEntry.zticketNo = this.getView().byId("iticketNo").getValue();
-			oEntry.zstatusDev = this.getView().byId("istatusDev").getValue();
-			oEntry.ZdevScope = this.getView().byId("idevScope").getValue();
-			oEntry.ZdevType = this.getView().byId("idevType").getValue();
-			oEntry.Zcomplexity = this.getView().byId("icomplexity").getValue();
-			oEntry.ZassignedBy = this.getView().byId("iassignedBy").getValue();
-			oEntry.OwnerNmOnsite = this.getView().byId("iownerNmOnsite").getValue();
-			oEntry.OwnerNmOffsh = this.getView().byId("iownerOffsh").getValue();
-			oEntry.zassignDate = this.getView().byId("iassignDate").getValue() + "T00:00:00";
-			oEntry.ZplanStart = this.getView().byId("iplanStart").getValue() + "T00:00:00";
-			oEntry.ZplanEnd = this.getView().byId("iplanEnd").getValue() + "T00:00:00";
-			oEntry.Zdeveloper = this.getView().byId("ideveloper").getValue();
+			oEntry.ZprojId = oview.byId("iprojId").getValue();
+			oEntry.ZgapNo = oview.byId("igapNo").getValue();
+			oEntry.ZspecName = oview.byId("ispecName").getValue();
+			oEntry.ZspecVersion = oview.byId("ispecVer").getValue();
+			oEntry.ZseqNo = oview.byId("iseqno").getValue();
+			oEntry.ZspecDesc = oview.byId("ispecDesc").getValue();
+			oEntry.Zdomain = oview.byId("idomain").getValue();
+			oEntry.Zteam = oview.byId("iteam").getValue();
+			oEntry.Zcategory = oview.byId("icategory").getValue();
+			oEntry.zticketNo = oview.byId("iticketNo").getValue();
+			oEntry.zstatusDev = oview.byId("istatusDev").getValue();
+			oEntry.ZdevScope = oview.byId("idevScope").getValue();
+			oEntry.ZdevType = oview.byId("idevType").getValue();
+			oEntry.Zcomplexity = oview.byId("icomplexity").getValue();
+			oEntry.ZassignedBy = oview.byId("iassignedBy").getValue();
+			oEntry.OwnerNmOnsite = oview.byId("iownerNmOnsite").getValue();
+			oEntry.OwnerNmOffsh = oview.byId("iownerOffsh").getValue();
+			var ozassignDate = oview.byId("iassignDate").getDateValue();
+			var oZplanStart = oview.byId("iplanStart").getDateValue();
+			var oZplanEnd = oview.byId("iplanEnd").getDateValue();
+			
+			var oFormatDate = sap.ui.core.format.DateFormat.getDateTimeInstance({
+			pattern: "yyyy-MM-ddTKK:mm:ss"});
+			oEntry.zassignDate = oFormatDate.format(ozassignDate);
+			oEntry.ZplanStart = oFormatDate.format(oZplanStart);
+            oEntry.ZplanEnd = oFormatDate.format(oZplanEnd);
+            
+			oEntry.Zdeveloper = oview.byId("ideveloper").getValue();
 
 			oModel.update("/TechTrackerSet", oEntry, {
 				method: "PUT",
 				success: function(data) {
-					MessageToast.show("Record has been saved");
+					dialog.close();
+					MessageToast.show("Record has been saved successfully");
+					// MessageToast.show("Record has been saved");
 								var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 			// Go one screen back if you find a Hash
@@ -114,25 +139,38 @@ sap.ui.define([
 			}
 				},
 				error: function(e) {
-					MessageToast.show("Error while saving record");
+					dialog.close();
+					MessageToast.show("Error occured while saving record");
 				}
 			});
 		},
 		
 		fTechCancel: function() {
+			var dialog = new sap.m.BusyDialog({ text:'Please wait'});
+			 dialog.open();
+
 			this.getView().byId("bCreate").setVisible(true);
 			this.getView().byId("bChange").setVisible(true);
-			this.getView().byId("bDelete").setVisible(true);
+			// this.getView().byId("bDelete").setVisible(true);
 			this.getView().byId("bSave").setVisible(false);
 			this.getView().byId("bCancel").setVisible(false);
 
+			// var oTable = this.getView().byId("idTechTable");
+			// var oModel = oTable.getModel();
+			// var aIndex = oTable.getSelectedIndex();
+			// var selectedRow = oTable.getRows()[aIndex];
+			// for (var i = 0; i < 14; i++) {
+			// 	selectedRow.getCells()[i].setProperty("editable", false);
+			// }
 			var oTable = this.getView().byId("idTechTable");
 			var oModel = oTable.getModel();
-			var aIndex = oTable.getSelectedIndex();
-			var selectedRow = oTable.getRows()[aIndex];
-			for (var i = 0; i < 14; i++) {
-				selectedRow.getCells()[i].setProperty("editable", false);
-			}
+			
+			oModel.setProperty("/TechTrackerSet", this.aDevMasterSet);
+			this.rebindTable();
+			
+			dialog.close();
+			
+		
 		}
 
 	});

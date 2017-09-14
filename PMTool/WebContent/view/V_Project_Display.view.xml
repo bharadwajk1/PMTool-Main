@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" controllerName="PMTool.controller.V_Project_Display"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" controllerName="ZNav.controller.V_Project_Display"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
@@ -45,11 +45,6 @@
 						<Label text="Project Start date"/>
 						<table:template>
 							<Input value="{ZprStdate}" editable="false"/>
-						<!--"{path : 'ZprStdate',-->
-      <!--                                   type : 'sap.ui.model.type.Date',-->
-      <!--                                   formatOptions: {    pattern:'yyyy-MM-dd',-->
-      <!--                                                       style :'short'}-->
-      <!--                                                       }" editable="false" />-->
 						</table:template>
 					</table:Column>		
 					
@@ -57,11 +52,6 @@
 						<Label text="Project End date"/>
 						<table:template>
 							<Input value="{ZprEndate}" editable="false"/>
-							<!--"{path : 'ZprEndate',-->
-       <!--                                  type : 'sap.ui.model.type.Date',-->
-       <!--                                  formatOptions: {    pattern:'yyyy-MM-dd',-->
-       <!--                                                      style :'short'}-->
-       <!--                                                      }" editable="false" />-->
 						</table:template>
 					</table:Column>		
 			</table:columns>

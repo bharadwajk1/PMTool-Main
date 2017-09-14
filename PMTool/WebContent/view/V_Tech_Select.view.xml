@@ -2,7 +2,7 @@
 xmlns:mvc="sap.ui.core.mvc" 
 xmlns="sap.m" 
 xmlns:html="http://www.w3.org/1999/xhtml" 
-controllerName="PMTool.controller.V_Tech_Select">
+controllerName="ZNav.controller.V_Tech_Select">
 	<App>
 		<pages>
 			<Page title="Tech Selection" showNavButton="true" navButtonPress="fGoToTarget_2">

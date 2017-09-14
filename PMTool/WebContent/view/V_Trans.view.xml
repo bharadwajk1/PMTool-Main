@@ -1,37 +1,30 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PMTool.controller.V_Trans">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Trans">
 	<App>
 		<pages>
-		<Page id="trans_page" title="Transport Tracker" showNavButton="true" navButtonPress="fGoToTarget_1" showHeader="true" enableScrolling="false" showFooter="false">
+		<Page id="trans_page" title="Transport Tracker" showNavButton="true" navButtonPress="fGoToTarget_1" showHeader="true" enableScrolling="true" showFooter="false">
 			<content>
-					<Button icon="sap-icon://edit" text="Edit" press="fChangeTrans" visible="true" id="idTransChange" />
-					<Button icon="sap-icon://delete" text="Delete" press="fDeleteTrans" visible="true" id="idTransDelete" />
-					<Button icon="sap-icon://copy" text="Copy" press="fCopyTrans" visible="true" id="idTransCopy" />
-					<Button icon="sap-icon://download" text="Export" press="fTransDownload" visible="true" id="idDownload" />
-				<!--<table:Table id="Trans_Table" -->
-				<!--	 		rows="{/TransTrackerSet}" -->
-				<!--	 		selectionMode="Single" -->
-				<!--	  		visibleRowCount="10" -->
-				<!--	  		ariaLabelledBy="title" -->
-				<!--	 		enableColumnReordering="true" -->
-				<!--	 		selectionBehavior="Row"-->
-				<!--	 		visibleRowCountMode="Fixed">-->
-					<table:Table id="Trans_Table" selectionMode="Single" selectionBehavior="Row" visibleRowCount="13">
+				<table:Table id="Trans_Table" rows="{/TransTrackerSet}" selectionMode="Single" visibleRowCount="10" ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">
 				<!--<table:Table id="Trans_Table" selectionMode="Single" visibleRowCount="7" ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">-->
 				
-						<!--<table:toolbar id="Trans_Toolbar">-->
-			   <!--         <Toolbar>-->
-			   <!--             <content>-->
-			   <!--             <Title id="title" text="Transport Tracker"/>-->
-						<!--	<ToolbarSpacer/>-->
-						<!--	<Button icon="sap-icon://copy" text="Copy" press="fCopy_Trans" visible="true" id="idCopy"/>-->
-						<!--	<Button icon="sap-icon://edit" text="Change" press="fChange_Trans" visible="true" id="idChange"/>-->
-						<!--	<Button icon="sap-icon://delete" text="Delete" visible="true" id="idDelete" press="fDeleteFromTrans"/>-->
-						<!--	<Button icon="sap-icon://save" text="Save" visible="false" id="idSave" press="fSaveChangeTrans"/>-->
-						<!--	<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idCancel" press="fCancelFromTrans"/>-->
-						<!--	<Button id="idDownload" icon="sap-icon://download" press="fTransDownload"/>-->
-			   <!--             </content>-->
-			   <!--         </Toolbar>-->
-			   <!--     </table:toolbar>-->
+						<table:toolbar id="Trans_Toolbar">
+			            <Toolbar>
+			                <content>
+			                <Title id="title" text="Transport Tracker"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://copy" text="Copy" press="fCopy_Trans" visible="true" id="idCopy"/>
+							<Button icon="sap-icon://edit" text="Change" press="fChange_Trans" visible="true" id="idChange"/>
+								<!--tooltip="show context of latest selection item"-->
+								<!--press="getContextByIndex"/>-->
+							<!--<Button icon="sap-icon://delete" text="Delete" visible="true" id="idDelete" press="fDeleteFromTrans"/>-->
+							<Button icon="sap-icon://save" text="Save" visible="false" id="idSave" press="fSaveChangeTrans"/>
+							<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idCancel" press="fCancelFromTrans"/>
+								<!--tooltip="clear selection"-->
+								<!--press="clearSelection"/>-->
+			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Create" width="100px" id="__button3" press="fCreate_Trans" icon="sap-icon://create"/>-->
+			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Change" width="100px" id="__button3_copy" icon="sap-icon://edit" press="fChange_Trans"/><Button text="Delete" width="100px" id="__button1" press="fDelete_Trans" icon="sap-icon://delete"/>-->
+			                </content>
+			            </Toolbar>
+			        </table:toolbar>
 				
 			<table:columns>
 				
@@ -45,98 +38,98 @@
 				<table:Column width="11rem">
 						<Label text="Tran List"/>
 						<table:template>
-							<Text id = "id1" text="{TranList}"/>
+							<Input value="{TranList}" editable="false"/>
 						</table:template>
 					</table:Column>	
 					
 				<table:Column width="11rem">
 						<Label text="Team" id="idTeam"/>
 						<table:template>
-							<Text id = "id2" text="{Team}"/>
+							<Input value="{Team}" editable="false"/>
 						</table:template>
 					</table:Column>					
 					
 				<table:Column width="11rem">
 						<Label text="Project Id"/>
 						<table:template>
-							<Text id = "id3" text="{Project}"/>
+							<Input value="{Project}" editable="false"/>
 						</table:template>
 					</table:Column>					
 					
 				<table:Column width="20rem">
 						<Label text="Ticket Number"/>
 						<table:template>
-							<Text id = "id4" text="{Ticket}"/>
+							<Input value="{Ticket}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Spec. Name"/>
 						<table:template>
-							<Text id = "id5" text="{Folder}"/>
+							<Input value="{Folder}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Sequence Number"/>
 						<table:template>
-							<Text id = "id6" text="{Seqnr}"/>
+							<Input value="{Seqnr}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Country"/>
 						<table:template>
-							<Text id = "id7" text="{Land1}"/>
+							<Input value="{Land1}" editable="false"/>
 						</table:template>
 					</table:Column>
 					
 				<table:Column width="11rem">
 						<Label text="Transport Request"/>
 						<table:template>
-							<Text id = "id8" text="{Trkorr}"/>
+							<Input value="{Trkorr}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Previous Request"/>
 						<table:template>
-							<Text id = "id9" text="{TrkorrPrev}"/>
+							<Input value="{TrkorrPrev}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Dev. Type"/>
 						<table:template>
-							<Text id = "id10" text="{Devtype}"/>
+							<Input value="{Devtype}" editable="false"/>
 						</table:template>
 					</table:Column>					
 					
 				<table:Column width="11rem">
 						<Label text="Owner"/>
 						<table:template>
-							<Text id = "id11" text="{As4user}"/>
+							<Input value="{As4user}" editable="false"/>
 						</table:template>
 					</table:Column>
 
 				<table:Column width="11rem">
 						<Label text="Comments"/>
 						<table:template>
-							<Text id = "id12" text="{Comments}"/>
+							<Input value="{Comments}" editable="false"/>
 						</table:template>
 					</table:Column>
 					
 				<table:Column width="11rem">
 						<Label text="Deletion indicator"/>
 						<table:template>
-							<Text id = "id13" text="{Delflg}"/>
+							<Input value="{Delflg}" editable="false"/>
 						</table:template>
 					</table:Column>
 					
 				<table:Column width="11rem">
 						<Label text="Created By"/>
 						<table:template>
-							<Text id = "id14" text="{Ernam}"/>
+							<Input value="{Ernam}" editable="false"/>
 						</table:template>
 					</table:Column>
 					
@@ -155,7 +148,8 @@
 					<!--<table:Column width="11rem">-->
 					<!--	<Label text="Created On" />-->
 					<!--	<table:template>-->
-					<!--		<Text id = "id15" text="{Erdat}"/>-->
+					<!--		<Input value="{Erdat}"-->
+					<!--		 editable="false"/>-->
 					<!--	</table:template>-->
 					<!--</table:Column>					-->
 					
@@ -167,17 +161,18 @@
 				<!--		</table:template>-->
 				<!--	</table:Column>-->
 					
-				<table:Column width="11rem">
-						<Label text="Changed by"/>
-						<table:template>
-							<Text id = "id16" text="{Chnam}"/>
-						</table:template>
-					</table:Column>
+				<!--<table:Column width="11rem">-->
+				<!--		<Label text="Changed by"/>-->
+				<!--		<table:template>-->
+				<!--			<Input value="{Chnam}" editable="false"/>-->
+				<!--		</table:template>-->
+				<!--	</table:Column>-->
 
 				<!--<table:Column width="11rem">-->
 				<!--		<Label text="Changed date" />-->
 				<!--		<table:template>-->
-				<!--			<Text id = "id17" text="{Chdat}"/>-->
+				<!--			<Input value="{Chdat}"-->
+				<!--			 editable="false"/>-->
 				<!--		</table:template>-->
 				<!--	</table:Column>					-->
 					
@@ -191,8 +186,168 @@
 					
 			</table:columns>
 			</table:Table>
+			<!--<VBox fitContainer="true">-->
+			<!--<smartFilterBar:SmartFilterBar -->
+			<!--id="smartFilterBar" -->
+			<!--entityType="TransTracker" -->
+			<!--persistencyKey="SmartFilter_Explored" -->
+			<!--basicSearchFieldName="Trkorr" -->
+			<!--enableBasicSearch="true" >-->
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+			<!--	<smartFilterBar:layoutData>-->
+			<!--		<FlexItemData shrinkFactor="0"/>-->
+			<!--	</smartFilterBar:layoutData>-->
+			<!--</smartFilterBar:SmartFilterBar>-->
+			
+			<!--<smartTable:SmartTable -->
+			<!--id="LineItemsSmartTable" -->
+			<!--entitySet="TransTrackerSet" -->
+			<!--tableType="Table" -->
+			<!--useExportToExcel="true" -->
+			<!--useVariantManagement="false" -->
+			<!--useTablePersonalisation="true"-->
+			<!--showRowCount="true" -->
+			<!--persistencyKey="SmartTableAnalytical_Explored" -->
+			<!--enableAutoBinding="true" -->
+			<!--app:useSmartField="true" -->
+			<!--class="sapUiResponsiveContentPadding">-->
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+			<!--	<smartTable:layoutData>-->
+			<!--			<FlexItemData growFactor="1" baseSize="0%"/>-->
+			<!--	</smartTable:layoutData>-->
+			<!--</smartTable:SmartTable>			-->
+			<!--		</VBox>-->
 			</content>
+			
+			<!--<footer>-->
+			<!--    <Bar id="Trans_Footer">-->
+			<!--        <contentRight>-->
+			<!--            <Button text="Save" width="100px" id="idGapSave" type="Accept" icon="sap-icon://save" press="fSaveChangeTrans"/>-->
+			<!--            <Button text="Cancel" width="100px" id="idGapCancel" icon="sap-icon://cancel" type="Reject" press="fCancelFromTrans"/>-->
+			<!--        </contentRight>-->
+			<!--    </Bar>-->
+			<!--</footer>			-->
+			
 		</Page>
 		</pages>
+		<!--<pages><Page title="Transport Tracker" showNavButton="true" navButtonPress="fGoToTarget_1">-->
+		<!--	<content>-->
+		<!--		<ScrollContainer class="scrollStyle" width="100%" horizontal="true" vertical="true">-->
+		<!--	    <Table noDataText="Drop column list items here and columns in the area above" id="Trans_Table" items="{/TransTrackerSet}" fixedLayout="false" growing="true" includeItemInSelection="true" mode="SingleSelectMaster" selectionChange="fChange_Trans">-->
+		<!--	        <items>-->
+		<!--	            <ColumnListItem>-->
+		<!--	                <cells>-->
+		<!--	                    <Text text="{Ticket}" id="__text0"/>-->
+		<!--	                    <Text text="{Team}" id="__text1"/>-->
+		<!--	                    <Text text="{Project}" id="__text2"/>-->
+		<!--	                    <Text text="{Ticket}" id="__text3"/>-->
+		<!--	                    <Text text="{Folder}" id="__text4"/>-->
+		<!--	                    <Text text="{Seqnr}" id="__text5"/>-->
+		<!--	                    <Text text="{Land1}" id="__text6"/>-->
+		<!--	                    <Text text="{Trkorr}" id="__text7"/>-->
+		<!--	                    <Text text="{TrkorrPrev}" id="__text8"/>-->
+		<!--	                    <Text text="{Devtype}" id="__text9"/>-->
+		<!--	                    <Text text="{As4user}" id="__text10"/>-->
+		<!--	                    <Text text="{Ernam}" id="__text11"/>-->
+		<!--	                    <Text text="{Erdat}" id="__text12"/>-->
+		<!--	                    <Text text="{Chdat}" id="__text30"/>-->
+		<!--	                    <Text text="{Objnr}" id="__text15"/></cells>-->
+		<!--	            </ColumnListItem>-->
+		<!--	            </items>-->
+		<!--	        <columns>-->
+		<!--	        	<Column id="__column0">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Transport List" id="__label0"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column1">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Team" id="__label1"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column2">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Proj. ID" id="__label2"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column3">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Ticket No" id="__label3"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>			            -->
+		<!--	            <Column id="__column4">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Spec. Name" id="__label4"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column5">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Seq No" id="__label5"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column6">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Country" id="__label6"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column7">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Transport Request" id="__label7"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column8">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Prev. Request" id="__label8"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column9">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Development Type" id="__label9"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column10">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Owner" id="__label10"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column11">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Created by" id="__label11"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column12">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="Created on" id="__label12"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="__column16">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="{/#TransTracker/Chdat/@sap:label}" id="__label16"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            <Column id="Objnr">-->
+		<!--	                <header>-->
+		<!--	                    <Label text="{/#TransTracker/Objnr/@sap:label}" id="Objnr_Label"/>-->
+		<!--	                </header>-->
+		<!--	            </Column>-->
+		<!--	            </columns>-->
+		<!--	        <customData>-->
+		<!--	            <core:CustomData key="w5g.dt.editable" value="false" id="__data2"/>-->
+		<!--	        </customData>-->
+		<!--	        <headerToolbar>-->
+		<!--	            <Toolbar width="100%" id="__toolbar1">-->
+		<!--	                <content>-->
+		<!--	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Create" width="100px" id="__button3" press="fCreate_Trans" icon="sap-icon://create"/>-->
+		<!--	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Change" width="100px" id="__button3_copy" icon="sap-icon://edit" press="fChange_Trans"/><Button text="Delete" width="100px" id="__button1" press="fDelete_Trans" icon="sap-icon://delete"/>-->
+		<!--	                </content>-->
+		<!--	            </Toolbar>-->
+		<!--	        </headerToolbar>-->
+		<!--	        </Table>-->
+		<!--	       </ScrollContainer>-->
+		<!--	</content>-->
+		<!--	<headerContent>-->
+		<!--	</headerContent>-->
+		<!--	</Page>-->
+		<!--</pages>-->
 	</App>
 </mvc:View>

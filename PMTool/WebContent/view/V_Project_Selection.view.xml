@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PMTool.controller.V_Project_Selection">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Project_Selection">
 	<App>
 		<pages>
 		<Page title="Select ProjMaster Details" showNavButton="true" navButtonPress="fGotoProjMaintain">

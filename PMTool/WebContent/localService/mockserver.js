@@ -20,7 +20,7 @@ sap.ui.define([
 			});
  
 			// simulate
-			var sPath = jQuery.sap.getModulePath("PMTool.localService");
+			var sPath = jQuery.sap.getModulePath("ZNav.localService");
 			oMockServer.simulate(sPath + "/metadata.xml", sPath + "/mockdata");
 			
 			// start

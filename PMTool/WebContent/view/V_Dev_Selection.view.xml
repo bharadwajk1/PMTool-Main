@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="PMTool.controller.V_Dev_Selection"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZNav.controller.V_Dev_Selection"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>

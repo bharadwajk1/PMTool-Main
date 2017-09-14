@@ -1,4 +1,4 @@
-<mvc:View controllerName="PMTool.controller.V_Root" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View controllerName="ZNav.controller.V_Root" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
 	xmlns="sap.m">
 	<App id = 'V_Main'>
 		<pages>

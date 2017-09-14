@@ -4,12 +4,12 @@ sap.ui.define([
 ], function(Controller,History) {
 	"use strict";
 
-	return Controller.extend("PMTool.controller.V_Dev_Selection", {
+	return Controller.extend("ZNav.controller.V_Dev_Selection", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf PMTool.view.V_Dev_Selection
+		 * @memberOf ZNav.view.V_Dev_Selection
 		 */
 		//	onInit: function() {
 		//
@@ -18,7 +18,7 @@ sap.ui.define([
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf PMTool.view.V_Dev_Selection
+		 * @memberOf ZNav.view.V_Dev_Selection
 		 */
 		//	onBeforeRendering: function() {
 		//
@@ -27,7 +27,7 @@ sap.ui.define([
 		/**
 		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf PMTool.view.V_Dev_Selection
+		 * @memberOf ZNav.view.V_Dev_Selection
 		 */
 		//	onAfterRendering: function() {
 		//
@@ -35,7 +35,7 @@ sap.ui.define([
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf PMTool.view.V_Dev_Selection
+		 * @memberOf ZNav.view.V_Dev_Selection
 		 */
 		//	onExit: function() {
 		//
@@ -47,7 +47,7 @@ sap.ui.define([
         oRouter.navTo("Route_Dev_Display", {});
 		},
 		/**
-	*@memberOf PMTool.controller.V_Trans_Selection
+	*@memberOf ZNav.controller.V_Trans_Selection
 	*/
           fGotoDevMaintain: function (Evt) {
 			var oHistory = History.getInstance();

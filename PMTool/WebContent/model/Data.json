@@ -22,40 +22,8 @@
  	},
  	{
  	"key": "02", 
-    "text": "India"
- 	},
- 	{
- 	"key": "03", 
-    "text": "Unknown"
+  "text": "India"
  	}
- ],
+ ]
  
- "DevMethod":[
- 	{
- 	"key":  "ABAP",
- 	"text": "ABAP"	
- 	},
- 	{
-    "key":  "DDIC",
- 	"text": "DDIC"
- 	},
- 	{
- 	"key":  "STREAM",
- 	"text": "STREAM"
- 	},
- 	{
- 	"key":  "SMART",
- 	"text": "SMART"
- 	},
- 	{
- 	"key":  "ADOBE",
- 	"text": "ADOBE"
- 	},
- 	{
- 	"key":  "SCRIPT",
- 	"text": "SCRIPT"
- 	}
- 	
- 	]
- 
- }
+}

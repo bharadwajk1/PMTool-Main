@@ -1,7 +1,7 @@
 {
 	"_version": "1.5.0",
 	"sap.app": {
-		"id": "PMTool",
+		"id": "ZNav",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -15,7 +15,7 @@
 		},
 		"dataSources": {
 			"ZTECH_TRACKER_SRV": {
-				"uri": "proxy/http/AMPSV019ECC0I.za.if.atcsg.net:8176/sap/opu/odata/sap/ZTECH_TRACKER_SRV/",
+				"uri": "/sap/opu/odata/sap/ZTECH_TRACKER_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -51,7 +51,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "PMTool.view.V_Root",
+			"viewName": "ZNav.view.V_Root",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -62,6 +62,7 @@
 				"sap.ui.layout": {},
 				"sap.ushell": {},
 				"sap.collaboration": {},
+				"sap.ui.comp": {},
 				"sap.uxap": {}
 			}
 		},
@@ -73,7 +74,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "PMTool.i18n.i18n"
+					"bundleName": "ZNav.i18n.i18n"
 				}
 			},
 			"": {
@@ -94,7 +95,7 @@
 		},
 		"routing": {
 			"config": {
-				"viewPath": "PMTool.view",
+				"viewPath": "ZNav.view",
 				"controlId": "V_Main",
 				"viewLevel": 1,
 				"controlAggregation": "pages",
@@ -127,13 +128,6 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "V_Gap_Create",
-					"viewLevel": 4
-				},
-					"Target_Gap": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearAggregation": true,
-					"viewName": "V_Gap",
 					"viewLevel": 4
 				},
 				"Target_Trans_Create": {
@@ -178,7 +172,13 @@
 					"viewName": "vcreate_tech",
 					"viewLevel": 4
 				},
-			
+				"Target_Gap": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "V_Gap",
+					"viewLevel": 3
+				},
 				"Target_Trans_Maintain": {
 					"viewType": "XML",
 					"transition": "slide",
@@ -209,6 +209,7 @@
 					"viewLevel": 4
 				},
 				"Target_Tech_Option": {
+					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "V_Tech_Option",
@@ -218,23 +219,8 @@
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
-					"viewName": "V_Dev_Maintain",
+					"viewName": "V_Dev_Maintainview",
 					"viewLevel": 3
-				},
-				"Target_Gap_Maintain": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearAggregation": true,
-					"viewName": "V_Gap_Maintain",
-					"viewLevel": 3
-				},
-				"Target_Gap_Select": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearAggregation": true,
-					"viewName": "V_Gap_Selection",
-					"viewId": "",
-					"viewLevel": 4
 				},
 				"Target_Dev_Select": {
 					"viewType": "XML",
@@ -323,7 +309,7 @@
 				"greedy": false,
 				"target": ["Target_Gap_Create"]
 			}, {
-				"name": "Route_Gap_Display",
+				"name": "Route_Gap",
 				"pattern": "V_Gap",
 				"titleTarget": "",
 				"greedy": false,
@@ -382,7 +368,7 @@
 				"target": ["Target_Tech_Option"]
 			}, {
 				"name": "Route_Dev_Maintain",
-				"pattern": "V_Dev_Maintain",
+				"pattern": "V_Dev_Maintainview",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Target_Dev_Maintain"]
@@ -393,21 +379,7 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Target_Dev_Select"]
-			},
-			{
-				"name": "Route_Gap_Maintain",
-				"pattern": "V_Gap_Maintain",
-				"titleTarget": "",
-				"greedy": false,
-				"target": ["Target_Gap_Maintain"]
-			},
-			{
-				"name": "Route_Gap_Select",
-				"pattern": "V_Gap_Selection",
-				"titleTarget": "",
-				"greedy": false,
-				"target": ["Target_Gap_Select"]
-			},{
+			}, {
 				"name": "Route_Proj_Maintain",
 				"pattern": "V_Project_Maintenance",
 				"titleTarget": "",

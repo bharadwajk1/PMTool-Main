@@ -2,49 +2,16 @@
 - <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
 - <edmx:DataServices m:DataServiceVersion="2.0">
 - <Schema Namespace="ZTECH_TRACKER_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-- <EntityType Name="ProjMaster" sap:content-version="1">
-- <Key>
-  <PropertyRef Name="ZprojId" /> 
-  </Key>
-  <Property Name="ZprojId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZprDesc" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Project Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZprStdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Prj.Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZprEndate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Prj.End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <NavigationProperty Name="N_ProjMasterToTechTracker" Relationship="ZTECH_TRACKER_SRV.ProjMasterToTechTracker" FromRole="FromRole_ProjMasterToTechTracker" ToRole="ToRole_ProjMasterToTechTracker" /> 
-  <NavigationProperty Name="N_ProjMasterToGapMaster" Relationship="ZTECH_TRACKER_SRV.ProjMasterToGapMaster" FromRole="FromRole_ProjMasterToGapMaster" ToRole="ToRole_ProjMasterToGapMaster" /> 
-  </EntityType>
-- <EntityType Name="GapMaster" sap:content-version="1">
-- <Key>
-  <PropertyRef Name="ZprojId" /> 
-  <PropertyRef Name="ZgapNo" /> 
-  </Key>
-  <Property Name="ZprojId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZgapNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Gap Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZgapName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="User name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <NavigationProperty Name="N_GapMasterToTechTracker" Relationship="ZTECH_TRACKER_SRV.GapMasterToTechTracker" FromRole="FromRole_GapMasterToTechTracker" ToRole="ToRole_GapMasterToTechTracker" /> 
-  </EntityType>
-- <EntityType Name="DevMaster" sap:content-version="1">
-- <Key>
-  <PropertyRef Name="Zdeveloper" /> 
-  </Key>
-  <Property Name="Zdeveloper" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Developer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZdeveloperName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Developer Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="Zactive" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Active" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <NavigationProperty Name="DevMasterToTechTracker" Relationship="ZTECH_TRACKER_SRV.DevMasterToTechTracker" FromRole="FromRole_DevMasterToTechTracker" ToRole="ToRole_DevMasterToTechTracker" /> 
-  </EntityType>
 - <EntityType Name="TechTracker" sap:content-version="1">
 - <Key>
-  <PropertyRef Name="ZprojId" /> 
-  <PropertyRef Name="ZgapNo" /> 
-  <PropertyRef Name="ZspecName" /> 
-  <PropertyRef Name="ZspecVersion" /> 
-  <PropertyRef Name="ZseqNo" /> 
+  <PropertyRef Name="Zobjnr" /> 
   </Key>
-  <Property Name="ZprojId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZgapNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Gap Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZspecName" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Specification Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZspecVersion" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Version Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="ZseqNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Seq.Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Zobjnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Internal Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZprojId" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZgapNo" Type="Edm.String" MaxLength="6" sap:unicode="false" sap:label="Gap Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZspecName" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Specification Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZspecVersion" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Version Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZseqNo" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Seq.Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="ZspecDesc" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Spec. Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Zdomain" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Domain" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Zteam" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Team" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
@@ -65,6 +32,33 @@
   <Property Name="Zdeveloper" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Developer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Zcomplexity" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Complexity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   </EntityType>
+- <EntityType Name="ProjMaster" sap:content-version="1">
+- <Key>
+  <PropertyRef Name="ZprojId" /> 
+  </Key>
+  <Property Name="ZprojId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZprDesc" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Project Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZprStdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Prj.Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZprEndate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Prj.End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <NavigationProperty Name="N_ProjMasterToGapMaster" Relationship="ZTECH_TRACKER_SRV.ProjMasterToGapMaster" FromRole="FromRole_ProjMasterToGapMaster" ToRole="ToRole_ProjMasterToGapMaster" /> 
+  </EntityType>
+- <EntityType Name="GapMaster" sap:content-version="1">
+- <Key>
+  <PropertyRef Name="ZprojId" /> 
+  <PropertyRef Name="ZgapNo" /> 
+  </Key>
+  <Property Name="ZprojId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Project id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZgapNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Gap Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZgapName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="User name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </EntityType>
+- <EntityType Name="DevMaster" sap:content-version="1">
+- <Key>
+  <PropertyRef Name="Zdeveloper" /> 
+  </Key>
+  <Property Name="Zdeveloper" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Developer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ZdeveloperName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Developer Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Zactive" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Active" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </EntityType>
 - <EntityType Name="TransTracker" sap:content-version="1">
 - <Key>
   <PropertyRef Name="Objnr" /> 
@@ -84,50 +78,12 @@
   <Property Name="Comments" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Comments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Delflg" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator: delete entry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
-  <Property Name="Erdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Ertim" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time created" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Chnam" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Changed by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Chdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Changed on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   <Property Name="Chtim" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
   </EntityType>
-- <Association Name="GapMasterToTechTracker" sap:content-version="1">
-  <End Type="ZTECH_TRACKER_SRV.GapMaster" Multiplicity="0..1" Role="FromRole_GapMasterToTechTracker" /> 
-  <End Type="ZTECH_TRACKER_SRV.TechTracker" Multiplicity="*" Role="ToRole_GapMasterToTechTracker" /> 
-- <ReferentialConstraint>
-- <Principal Role="FromRole_GapMasterToTechTracker">
-  <PropertyRef Name="ZgapNo" /> 
-  <PropertyRef Name="ZprojId" /> 
-  </Principal>
-- <Dependent Role="ToRole_GapMasterToTechTracker">
-  <PropertyRef Name="ZgapNo" /> 
-  <PropertyRef Name="ZprojId" /> 
-  </Dependent>
-  </ReferentialConstraint>
-  </Association>
-- <Association Name="DevMasterToTechTracker" sap:content-version="1">
-  <End Type="ZTECH_TRACKER_SRV.DevMaster" Multiplicity="1" Role="FromRole_DevMasterToTechTracker" /> 
-  <End Type="ZTECH_TRACKER_SRV.TechTracker" Multiplicity="*" Role="ToRole_DevMasterToTechTracker" /> 
-- <ReferentialConstraint>
-- <Principal Role="FromRole_DevMasterToTechTracker">
-  <PropertyRef Name="Zdeveloper" /> 
-  </Principal>
-- <Dependent Role="ToRole_DevMasterToTechTracker">
-  <PropertyRef Name="Zdeveloper" /> 
-  </Dependent>
-  </ReferentialConstraint>
-  </Association>
-- <Association Name="ProjMasterToTechTracker" sap:content-version="1">
-  <End Type="ZTECH_TRACKER_SRV.ProjMaster" Multiplicity="1" Role="FromRole_ProjMasterToTechTracker" /> 
-  <End Type="ZTECH_TRACKER_SRV.TechTracker" Multiplicity="*" Role="ToRole_ProjMasterToTechTracker" /> 
-- <ReferentialConstraint>
-- <Principal Role="FromRole_ProjMasterToTechTracker">
-  <PropertyRef Name="ZprojId" /> 
-  </Principal>
-- <Dependent Role="ToRole_ProjMasterToTechTracker">
-  <PropertyRef Name="ZprojId" /> 
-  </Dependent>
-  </ReferentialConstraint>
-  </Association>
 - <Association Name="ProjMasterToGapMaster" sap:content-version="1">
   <End Type="ZTECH_TRACKER_SRV.ProjMaster" Multiplicity="1" Role="FromRole_ProjMasterToGapMaster" /> 
   <End Type="ZTECH_TRACKER_SRV.GapMaster" Multiplicity="*" Role="ToRole_ProjMasterToGapMaster" /> 
@@ -141,26 +97,14 @@
   </ReferentialConstraint>
   </Association>
 - <EntityContainer Name="ZTECH_TRACKER_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+  <EntitySet Name="TechTrackerSet" EntityType="ZTECH_TRACKER_SRV.TechTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
   <EntitySet Name="ProjMasterSet" EntityType="ZTECH_TRACKER_SRV.ProjMaster" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
   <EntitySet Name="GapMasterSet" EntityType="ZTECH_TRACKER_SRV.GapMaster" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
   <EntitySet Name="DevMasterSet" EntityType="ZTECH_TRACKER_SRV.DevMaster" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
-  <EntitySet Name="TechTrackerSet" EntityType="ZTECH_TRACKER_SRV.TechTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
   <EntitySet Name="TransTrackerSet" EntityType="ZTECH_TRACKER_SRV.TransTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" /> 
-- <AssociationSet Name="GapMasterToTechTrackerSet" Association="ZTECH_TRACKER_SRV.GapMasterToTechTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-  <End EntitySet="GapMasterSet" Role="FromRole_GapMasterToTechTracker" /> 
-  <End EntitySet="TechTrackerSet" Role="ToRole_GapMasterToTechTracker" /> 
-  </AssociationSet>
 - <AssociationSet Name="ProjMasterToGapMasterSet" Association="ZTECH_TRACKER_SRV.ProjMasterToGapMaster" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
   <End EntitySet="ProjMasterSet" Role="FromRole_ProjMasterToGapMaster" /> 
   <End EntitySet="GapMasterSet" Role="ToRole_ProjMasterToGapMaster" /> 
-  </AssociationSet>
-- <AssociationSet Name="DevMasterToTechTrackerSet" Association="ZTECH_TRACKER_SRV.DevMasterToTechTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-  <End EntitySet="DevMasterSet" Role="FromRole_DevMasterToTechTracker" /> 
-  <End EntitySet="TechTrackerSet" Role="ToRole_DevMasterToTechTracker" /> 
-  </AssociationSet>
-- <AssociationSet Name="ProjMasterToTechTrackerSet" Association="ZTECH_TRACKER_SRV.ProjMasterToTechTracker" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-  <End EntitySet="ProjMasterSet" Role="FromRole_ProjMasterToTechTracker" /> 
-  <End EntitySet="TechTrackerSet" Role="ToRole_ProjMasterToTechTracker" /> 
   </AssociationSet>
   </EntityContainer>
   <atom:link rel="self" href="http://AMPSV019ECC0I.za.if.atcsg.net:8176/sap/opu/odata/sap/ZTECH_TRACKER_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" /> 

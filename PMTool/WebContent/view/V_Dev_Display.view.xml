@@ -1,43 +1,50 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table" controllerName="PMTool.controller.V_Dev_Display">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table" controllerName="ZNav.controller.V_Dev_Display">
 	
 		<App>
 		<pages>
 				<Page id="Dev_page" title=" Development Master" showNavButton="true" navButtonPress="fGoToTarget_1" showHeader="true" enableScrolling="true" showFooter="false">
 				<content>
-					<Button icon="sap-icon://copy" text="Copy" press="fGoToDevCopy" visible="true" id="idDevCopy" />
-					<Button icon="sap-icon://edit" text="Change" press="fChangeDev" visible="true" id="idDevChange" />
-					<Button icon="sap-icon://delete" text="Delete" press="fDeleteDev" visible="true" id="idDevDelete" />
-				   <table:Table id="Dev_Table" rows="{/DevMasterSet}" selectionMode="Single"  ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">
-						<!--<table:toolbar id="Dev_Toolbar">-->
-			            <!--<Toolbar>-->
-			                <!--<content>-->
-			                <!--<Title id="title" text="Development Master"/>-->
-							<!--<ToolbarSpacer/>-->
-							<!--<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idDevCancel" press="fCancelFromDev"/>-->
-							<!--</content>-->
-			            <!--</Toolbar>-->
-			        <!--</table:toolbar>-->
+				   <table:Table id="Dev_Table" rows="{/DevMasterSet}" selectionMode="Single" visibleRowCount="7" ariaLabelledBy="title" enableColumnReordering="true">
+						<table:toolbar id="Dev_Toolbar">
+			            <Toolbar>
+			                <content>
+			                <Title id="title" text="Development Master"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://create" text="Copy" press="fGoToDevCopy" visible="true" id="idDevCopy" />
+							<Button icon="sap-icon://edit" text="Change" press="fChangeDev" visible="true" id="idDevChange" />
+								<!--tooltip="show context of latest selection item"-->
+								<!--press="getContextByIndex"/>-->
+							<!--<Button icon="sap-icon://delete" text="Delete" visible="true" id="idDevDelete" press="fDeleteDevEntry" />-->
+							<Button icon="sap-icon://save" text="Save" visible="false" id="idDevSave" press="fSaveChangeDev"/>
+							<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idDevCancel" press="fCancelFromDev"/>
+								<!--tooltip="clear selection"-->
+								<!--press="clearSelection"/>-->
+			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Create" width="100px" id="__button3" press="fCreate_Trans" icon="sap-icon://create"/>-->
+			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Change" width="100px" id="__button3_copy" icon="sap-icon://edit" press="fChange_Trans"/><Button text="Delete" width="100px" id="__button1" press="fDelete_Trans" icon="sap-icon://delete"/>-->
+			                </content>
+			            </Toolbar>
+			        </table:toolbar>
 			        
 			<table:columns>
 				
-				<table:Column width="5rem">
+				<table:Column width="20rem">
 						<Label text="Developer Id"/>
 						<table:template>
-							<Text id = "DevId" text="{Zdeveloper}" />
+							<Input value="{Zdeveloper}" editable="false"/>
 						</table:template>
 					</table:Column>	
 					
-				<table:Column width="6rem">
+				<table:Column width="11rem">
 						<Label text="Developer Name"/>
 						<table:template>
-							<Text id = "DevName" text="{ZdeveloperName}"/>
+							<Input value="{ZdeveloperName}" editable="false"/>
 						</table:template>
 					</table:Column>	
 					
-				<table:Column width="5rem">
+				<table:Column width="11rem">
 						<Label text="Active"/>
 						<table:template>
-							<CheckBox id="zdevdactive" selected="{Zactive}" enabled="false"/>
+							<Input value="{Zactive}" editable="false"/>
 						</table:template>
 					</table:Column>					
 			</table:columns>

@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("PMTool.controller.V_Root", {
+	return Controller.extend("ZNav.controller.V_Root", {
 
 	});
 });

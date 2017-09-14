@@ -12,7 +12,7 @@
 			data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table"
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"PMTool": "../"}'>
+			data-sap-ui-resourceroots='{"ZNav": "../"}'>
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -20,7 +20,7 @@
 		<script>
 			sap.ui.getCore().attachInit(function() {
 				sap.ui.require ([
-					"PMTool/localService/mockserver",
+					"ZNav/localService/mockserver",
 					"sap/m/Shell",
 					"sap/ui/core/ComponentContainer"
 					],
@@ -29,7 +29,7 @@
 				new Shell({
 					app: new ComponentContainer({
 						height : "100%",
-						name : "PMTool"
+						name : "ZNav"
 					})
 				}).placeAt("content");
 			});

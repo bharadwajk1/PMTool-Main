@@ -1,17 +1,14 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="PMTool.controller.V_Gap_Create">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Gap_Create">
 	<App>
-		<pages><Page title="Create Gap" showNavButton="true" navButtonPress="fGoToGapDisplay">
+		<pages><Page title="Create Gap" showNavButton="true" navButtonPress="fGoBackFromGapCreate">
 				<content>
 				    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form1">
 				        
 				        <sap.ui.layout.form:content>
-				        	<Label text="Project Id" required="true"/>
-				        	<!--<Input width="20%" id="idProjectId" liveChange="fvalidation"/>-->
-				        		<ComboBox id="idProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}">
-                                 <core:Item key="{ZprojId}" text="{ZprDesc}"/>
-                                 </ComboBox>
-				            <Label text="Gap Number" required="true"/>
-				            <Input  width="20%" id="idGapNumber"  maxLength="6"/>
+				        	<Label text="Project Id"/>
+				        	<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="idProjectId"/>
+				            <Label text="Gap Number"/>
+				            <Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="idGapNumber"/>
 				            <Label text="Gap Description"/>
 				            <Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="auto" id="idGapDescription"/>
 				        </sap.ui.layout.form:content>    
@@ -21,7 +18,7 @@
 			    <Bar id="__bar0">
 			        <contentRight>
 			            <Button text="Save" width="100px" id="idGapSave" type="Accept" icon="sap-icon://save" press="fSaveGap"/>
-			            <Button text="Cancel" width="100px" id="idGapCancel" icon="sap-icon://cancel" type="Reject" press="fGoToGapDisplay"/>
+			            <Button text="Cancel" width="100px" id="idGapCancel" icon="sap-icon://cancel" type="Reject" press="fGoBackFromGapCreate"/>
 			        </contentRight>
 			    </Bar>
 			</footer>

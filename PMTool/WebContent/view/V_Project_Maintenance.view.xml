@@ -1,8 +1,8 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="PMTool.controller.V_Project_Maintenance"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZNav.controller.V_Project_Maintenance"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-				<Page title="Project Master" showNavButton="true" showFooter="false" navButtonPress="fGoToProj_1">
+				<Page title="Proj Master" showNavButton="true" showFooter="false" navButtonPress="fGoToProj_1">
 				<TileContainer>
 				        <tiles>
 				            <StandardTile title="Create" id="id_Create" press="fGoToProjCreate"/>
