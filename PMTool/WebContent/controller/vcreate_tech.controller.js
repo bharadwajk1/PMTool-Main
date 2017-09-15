@@ -2,7 +2,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap
 	function(Controller, History, MessageToast) {
 		"use strict";
 		var chk;
-		return Controller.extend("ZNav.controller.vcreate_tech", {
+		return Controller.extend("PMTool.controller.vcreate_tech", {
 			/**
 			 * Called when a controller is instantiated and its View controls (if available) are already created.
 			 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
