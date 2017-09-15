@@ -8,12 +8,16 @@
 						<sap.ui.layout.form:content>
 							<Label text="Project Id" required="true"/>
 							<!--<Input width="5%" id="vcreateProjectId"/>-->
-							<ComboBox id="vcreateProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}" selectionChange="handle_projId_combo">
+							<ComboBox id="vcreateProjectId" width="7cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}"
+								selectionChange="handle_projId_combo">
 								<core:Item key="{ZprojId}" text="{ZprDesc}"/>
 							</ComboBox>
 							<Label text="Team" required="true"/>
-							<ComboBox id="vTeam" width="5cm" showSecondaryValues="true" items="{path: 'jData>/team/'}"
-							           selectionChange="handle_projId_combo">
+							<ComboBox id="vTeam" width="5cm" showSecondaryValues="true" items="{path: 'jData>/team/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							<Label text="Domain" required="true"/>
+							<ComboBox id="vDomain" width="5cm" showSecondaryValues="true" items="{path: 'jData>/Domain/'}" selectionChange="handle_projId_combo">
 								<core:Item key="{jData>key}" text="{jData>text}"/>
 							</ComboBox>
 							<Label text="Gap Number"/>
@@ -35,6 +39,28 @@
 							<ComboBox id="vcreatedev" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevType/'}" selectionChange="handle_projId_combo">
 								<core:Item key="{jData>key}" text="{jData>text}"/>
 							</ComboBox>
+								<Label text="Category" required ="true"/>
+			                 	<ComboBox id="vcategory" width="5cm" showSecondaryValues="true" items="{path: 'jData>/category/'}" selectionChange="handle_projId_combo">
+			                 	<core:Item key="{jData>key}" text="{jData>text}"/>
+			                 	</ComboBox>
+							<Label text="Priority"/>
+							<ComboBox id="vpriority" width="5cm" showSecondaryValues="true" items="{path: 'jData>/priority/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							<Label text="Complexity"/>
+							<ComboBox id="vcomplexity" width="5cm" showSecondaryValues="true" items="{path: 'jData>/complexity/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							
+					        <Label text="Dev Scope" required = "true"/>
+				         	<ComboBox id="vDevScope" width="5cm" showSecondaryValues="true" items="{path: 'jData>/devscope/'}" selectionChange="handle_projId_combo">
+				        	<core:Item key="{jData>key}" text="{jData>text}"/>
+				        	</ComboBox>
+				        	
+							<Label text="Dev Status" required = "true"/>
+							<ComboBox id="vdevstatus" width="5cm" showSecondaryValues="true" items="{path: 'jData>/dstatus/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatedev" />-->
 							<!--<InputListItem id ="vcreatedev">-->
 							<!--	<Select>-->
@@ -46,27 +72,34 @@
 							<!--		<core:Item key= "EN"	text = "Enhancement - new"/>-->
 							<!--	</Select>-->
 							<!--</InputListItem>-->
-							
-							<Label text="Assigned by"/>
-							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
-								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreateassby"/>
-							<Label text="Assigned date" required="true"/>
-								<Datepicker width = "20%" id="vcreateassdate" placeholder="Select Date..." change="fCheckDate"/>
+							<Label text="Developer" required="true"/>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatedeveloper"/>-->
+							<ComboBox id="vcreatedeveloper" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+								<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+							</ComboBox>
+							<Label text="Assigned By" required="true"/>
+							<ComboBox id="vcreateassby" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+								<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+							</ComboBox>
+							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
+							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreateassby"/>-->
+							<Label text="Assigned Date" required="true"/>
+							<Datepicker width="20%" id="vcreateassdate" placeholder="Select Date..." change="fCheckDate"/>
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
 							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" dateFormat="" type="Date" width="20%" id="vcreateassdate"/>-->
-							<Label text="Planned Startdate" required="true"/>
+							<Label text="Plan Start Date" required="true"/>
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
 							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatepsdate"/>-->
-							<Datepicker width = "20%" id="vcreatepsdate" placeholder="Select Date..." change="fCheckDate"/>
-							<Label text="Planned Enddate" required="true"/>
-							<Datepicker width = "20%" id="vcreatepedate" placeholder="Select Date..." change="fCheckDate"/>
+							<Datepicker width="20%" id="vcreatepsdate" placeholder="Select Date..." change="fCheckDate"/>
+							<Label text="Plan End Date" required="true"/>
+							<Datepicker width="20%" id="vcreatepedate" placeholder="Select Date..." change="fCheckDate"/>
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"-->
 							<!--	xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatepedate"/>-->
-							<Label text="Realstardate"/>
-							<Datepicker width = "20%" id="vcreatersdate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Label text="Realstartdate"/>-->
+							<!--<Datepicker width = "20%" id="vcreatersdate" placeholder="Select Date..." change="fCheckDate"/>-->
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreatersdate"/>-->
-							<Label text="RealEnddate"/>
-							<Datepicker width = "20%" id="vcreateredate" placeholder="Select Date..." change="fCheckDate"/>
+							<!--<Label text="RealEnddate"/>-->
+							<!--<Datepicker width = "20%" id="vcreateredate" placeholder="Select Date..." change="fCheckDate"/>-->
 							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" type="Date" width="20%" id="vcreateredate"/>-->
 							<Label text="Actual Code Days"/>
 							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
@@ -74,10 +107,10 @@
 							<Label text="STD Days"/>
 							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
 								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vstdDays"/>
-							<Label text="Code Days" required="true"/>
+							<Label text="Code Days"/>
 							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
 								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vcodeDays"/>
-							<Label text="Testing Days" required="true"/>
+							<Label text="Testing Days"/>
 							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
 								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vtestingDays"/>
 							<Label text="Review Days"/>
@@ -86,13 +119,6 @@
 							<Label text="ABAP Workload"/>
 							<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
 								xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="10%" id="vabapWorkload"/>
-
-							<Label text="Developer" required="true"/>
-							<!--<Input xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" width="20%" id="vcreatedeveloper"/>-->
-							<ComboBox id="vcreatedeveloper" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
-								<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
-							</ComboBox>
-							
 						</sap.ui.layout.form:content>
 					</sap.ui.layout.form:SimpleForm>
 				</content>

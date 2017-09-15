@@ -1,33 +1,26 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ZNav.controller.V_Tech">
 	<App>
-		<pages><Page title="Technical Tracker" showNavButton="true" navButtonPress="fGoto_Target1" showHeader="true" showFooter="false">
+		<pages><Page title="Technical Tracker" showNavButton="true" navButtonPress="fGoto_Target1" showFooter="false" >
 				<content>
-						<!--<Toolbar>-->
-						<!--	<content>-->
-						<!--		<ToolbarSpacer/>-->
-						<!--		<Button id="bCopy" text="Copy" icon="sap-icon://copy" press="fTechCopy" type="Emphasized"/>-->
-						<!--		<Button id="bChange" text="Change" icon="sap-icon://edit" press="fTechChange" type="Emphasized"/>-->
-						<!--		<Button id="bDelete" text="Delete" icon="sap-icon://delete" press="fTechDelete" type="Reject"/>-->
-						<!--		<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" type="Accept" visible="false"/>-->
-						<!--		<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" type="Reject" visible="false"/>-->
-						<!--		<Button id="bDownload" text="Download" icon="sap-icon://download" press="fTechDownload"/>-->
-						<!--	</content>-->
-						<!--</Toolbar>-->
+						<Toolbar>
+							<content>
+								<ToolbarSpacer/>
+								<ToolbarSpacer/>
+									<Button id="bCopy" text="Copy" icon="sap-icon://copy" press="fTechCopy"/>
+									<Button id="bChange" text="Edit" icon="sap-icon://edit" press="fTechChange"/>
+									<Button id="bDelete" text="Delete" icon="sap-icon://delete" press="fTechDelete"/>
+									<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" visible="false"/>
+									<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" visible="false"/>
+									<Button id="bDownload" text="Export" icon="sap-icon://download" press="fTechDownload"/>
+							</content>
+						</Toolbar>
 					
 					<!--<ScrollContainer horizontal="true" vertical="true" focusable="true">-->
-					<table:Table id="idTechTable" rows="{/TechTrackerSet}" selectionMode="Single" visibleRowCount="10" ariaLabelledBy="title" enableColumnReordering="true" selectionBehavior="Row">
-						<table:toolbar>
-							<Toolbar>
-								<content>
-						<Button id="bCopy" text="Copy" icon="sap-icon://copy" press="fTechCopy"/>
-						<Button id="bChange" text="Edit" icon="sap-icon://edit" press="fTechChange"/>
-						<Button id="bDelete" text="Delete" icon="sap-icon://delete" press="fTechDelete"/>
-						<Button id="bSave" text="Save" icon="sap-icon://save" press="fTechSave" visible="false"/>
-						<Button id="bCancel" text="Cancel" icon="sap-icon://cancel" press="fTechCancel" visible="false"/>
-						<Button id="bDownload" text="Export" icon="sap-icon://download" press="fTechDownload"/>
-							</content>
-							</Toolbar>
-						</table:toolbar>
+					<!--<table:Table id="idTechTable1" ariaLabelledBy="title" enableColumnReordering="true" showNoData = "false" selectionBehavior="Row">-->
+					<ScrollContainer height= "87%" width="100%" horizontal="true" vertical="true" focusable="true">
+						<table:Table id="idTechTable" rows="{/TechTrackerSet}" selectionMode="Single" ariaLabelledBy="title" selectionBehavior="Row">
+						
+
 						<table:columns>
 							<table:Column width="3cm">
 								<Text text="Project ID" width="80px"/>
@@ -177,37 +170,37 @@
 							</table:Column>
 							
 						
-							<table:Column width="2cm">
+							<table:Column width="3cm">
 								<Text text="STD Days"/>
 								<table:template>
 									<Text id="istdDays" text="{ZstdDays}"/>
 								</table:template>
 							</table:Column>
-							<table:Column width="2cm">
+							<table:Column width="3cm">
 								<Text text="Code Days"/>
 								<table:template>
 									<Text id="icodeDays" text="{ZcodeDays}"/>
 								</table:template>
 							</table:Column>
-							<table:Column width="2cm">
+							<table:Column width="3cm">
 								<Text text="Testing Days"/>
 								<table:template>
 									<Text id="itestDays" text="{ZtestDays}"/>
 								</table:template>
 							</table:Column>
-							<table:Column width="2cm">
+							<table:Column width="3cm">
 								<Text text="Review Days"/>
 								<table:template>
 									<Text id="irevDays" text="{ZrevDays}"/>
 								</table:template>
 							</table:Column>
-							<table:Column width="2cm">
+							<table:Column width="3.5cm">
 								<Text text="ABAP Workload"/>
 								<table:template>
 									<Text id="iabapWLoad" text="{ZabapWorkLoad}"/>
 								</table:template>
 							</table:Column>
-								<table:Column width="2cm">
+								<table:Column width="3.5cm">
 								<Text text="Actual Code Days"/>
 								<table:template>
 									<Text id="iactCodeDays" text="{ZactualDays}"/>
@@ -215,7 +208,7 @@
 							</table:Column>
 						</table:columns>
 					</table:Table>
-					<!--</ScrollContainer>-->
+					</ScrollContainer>
 					<!--<smartTable:SmartTable -->
 					<!--	id="idTechTable" -->
 					<!--	entitySet="TechTrackerSet" -->

@@ -3,19 +3,30 @@
 	title="Edit Record" draggable="true">
 		<content>
 			<f:SimpleForm>
-				<Label text="Project"/>
+				<Label text="Project"  required="true"/>
 				<!--<Input id = "inProjectId"/>-->
-				<ComboBox id="inProjectId" width="5cm" showSecondaryValues="true" items="{ path: '/ProjMasterSet'}" selectionChange="handle_projId_combo">
-					<core:Item key="{ZprojID}" text="{ZprDesc}"/>
+				<ComboBox id="inProjectId" width="5cm" showSecondaryValues="true" 
+				items="{ path: '/ProjMasterSet'}" selectionChange="handle_projId_combo">
+					<core:Item key="{ZprojId}" text="{ZprDesc}"/>
 				</ComboBox>
-				<Label text="Team"/>
+				
+				
+				<Label text="Team" required="true"/>
+				
 				<ComboBox id="inTeam" width="3cm" showSecondaryValues="true" items="{path: 'jData>/team/'}" selectionChange="handle_projId_combo">
 					<core:Item key="{jData>key}" text="{jData>text}"/>
 				</ComboBox>
+				
+					<Label text="Domain" required="true"/>
+							<ComboBox id="inDomain" width="5cm" showSecondaryValues="true"
+							items="{path: 'jData>/Domain/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+							
 				<!--<Input id = "inTeam" width="4cm"/>-->
 				<Label text="Gap No"/>
 				<Input id="inGapNo" width="3cm"/>
-				<Label text="Spec Name"/>
+				<Label text="Spec Name" required="true"/>
 				<Input id="inSpecName" width="4cm"/>
 				<Label text="Spec Version"/>
 				<Input id="inSpecVer" width="2cm"/>
@@ -23,35 +34,52 @@
 				<Input id="inSeq" width="2cm"/>
 				<Label text="Spec Desc"/>
 				<Input id="inSpecDesc" width="8cm"/>
-				<Label text="Domain"/>
-				<Input id="inDomain" width="2cm"/>
-				<Label text="Category"/>
-				<Input id="inCategory" width="3cm"/>
-				<Label text="Ticket"/>
+				
+				<Label text="Category" required ="true"/>
+				<ComboBox id="inCategory" width="5cm" showSecondaryValues="true" items="{path: 'jData>/category/'}" selectionChange="handle_projId_combo">
+				<core:Item key="{jData>key}" text="{jData>text}"/>
+				</ComboBox>
+				<Label text="Ticket" required="true"/>
 				<Input id="inTicket" width="5cm"/>
-				<Label text="Dev Status"/>
-				<Input id="inDevStatus" width="4cm"/>
-				<Label text="Dev Scope"/>
-				<Input id="inDevScope" width="4cm"/>
-				<Label text="Dev Type"/>
+				
+				<Label text="Dev Scope" required = "true"/>
+					<ComboBox id="inDevScope" width="5cm" showSecondaryValues="true" items="{path: 'jData>/devscope/'}" selectionChange="handle_projId_combo">
+					<core:Item key="{jData>key}" text="{jData>text}"/>
+					</ComboBox>
+					
+				<Label text="Dev Type"  required="true" />
 				<ComboBox id="inDevType" width="5cm" showSecondaryValues="true" items="{path: 'jData>/DevType/'}" selectionChange="handle_projId_combo">
 					<core:Item key="{jData>key}" text="{jData>text}"/>
 				</ComboBox>
-				<Label text="Complexity"/>
-				<Input id="inComplexity" width="4cm"/>
-				<Label text="Assigned by"/>
-				<Input id="inAssignedBy" width="3cm"/>
-				<Label text="Developer"/>
+				
+		
+			    <Label text="Dev Status" required = "true"/>
+				<ComboBox id="inDevStatus" width="5cm" showSecondaryValues="true" items="{path: 'jData>/dstatus/'}"
+				selectionChange="handle_projId_combo">
+				<core:Item key="{jData>key}" text="{jData>text}"/>
+				</ComboBox>
+				
+			
+					<Label text="Complexity"/>
+							<ComboBox id="inComplexity" width="5cm" showSecondaryValues="true" items="{path: 'jData>/complexity/'}" selectionChange="handle_projId_combo">
+								<core:Item key="{jData>key}" text="{jData>text}"/>
+							</ComboBox>
+				<Label text="Assigned by"  required="true"/>
+				<ComboBox id="inAssignedBy" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
+				<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
+				</ComboBox>
+
+				<Label text="Developer"  required="true"/>
 				<ComboBox id="inDeveloper" width="6cm" showSecondaryValues="true" items="{ path: '/DevMasterSet'}">
 					<core:Item key="{Zdeveloper}" text="{ZdeveloperName}"/>
 				</ComboBox>
-				<Label text="Assigned date"/>
+				<Label text="Assigned date" required="true"/>
 				<DatePicker id="inAssignedDate" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
 					valueFormat="dd-MM-yyyy"/>
-				<Label text="Planned Start"/>
+				<Label text="Planned Start" required="true"/>
 				<DatePicker id="inPlanStart" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
 					valueFormat="dd-MM-yyyy"/>
-				<Label text="Planned End"/>
+				<Label text="Planned End" required="true"/>
 				<DatePicker id="inPlanEnd" width="4cm" placeholder="Enter Date ..." class="sapUiSmallMarginBottom" displayFormat="dd-MM-yyyy"
 					valueFormat="dd-MM-yyyy"/>
 				<Label text="Real Start"/>

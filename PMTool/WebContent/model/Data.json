@@ -1,8 +1,8 @@
 {
-	"DevType": [
+"DevType": [
  {
- 	"key": "L",
- 	"text": "Localizing (standard customizing)"
+  "key": "L",
+  "text": "Localizing (standard customizing)"
  },
  {
     "key": "RN",
@@ -14,16 +14,143 @@
  }
  ],
  
+ "priority": 
+ [
+  {
+  "key": "H", 
+  "text": "High"
+  },
+  {
+  "key": "M", 
+  "text": "Medium"
+  },
+  {
+  "key": "L",
+  "text": "Low"
+  }
+ ],
+ 
+ "complexity": 
+ [
+  {
+  "key": "L", 
+  "text": "Very Simple"
+  },
+  {
+  "key": "S", 
+  "text": "Simple"
+  },
+  {
+  "key": "M", 
+  "text": "Medium"
+  },
+  {
+  "key": "C",
+  "text": "Complex"
+  }
+ ],
+ 
+ 
  "team": 
  [
- 	{
- 	"key": "01", 
+  {
+  "key": "01", 
   "text": "France"
- 	},
- 	{
- 	"key": "02", 
+  },
+  {
+  "key": "02", 
   "text": "India"
- 	}
+  }
+ ],
+ 
+ "Domain": 
+ [
+  {
+  "key": "SD", 
+  "text": "Sales&Distribution"
+  },
+  {
+  "key": "MM", 
+  "text": "Materials Management"
+  },
+  {
+  "key": "FI", 
+  "text": "Finance"
+  },
+  {
+  "key": "CO", 
+  "text": "Controlling"
+  },
+  {
+  "key": "SC", 
+  "text": "Supply Chain"
+  },
+  {
+  "key": "PP", 
+  "text": "Production Planning"
+  },
+  {
+  "key": "QM", 
+"text": "Quality Management"
+  },
+  {
+  "key": "PM", 
+"text": "Plant Maintenance"
+  }
+  
+
+ ],
+ 
+  "dstatus": 
+ [
+  {
+  "key": "0", 
+  "text": "Not Begun"
+  },
+  {
+  "key": "1", 
+  "text": "In Progress"
+  },
+  {
+  "key": "2",
+  "text": "Waiting for Confirmation"
+  },
+  {
+  "key": "9",
+  "text": "Closed"
+  }
+ ],
+
+ "category":
+ [
+ {
+  "key": "01",
+  "text": "Evol-Billable"
+ },
+ {
+  "key": "02",
+  "text": "Bug"
+ }
+ ],
+ 
+ "devscope":
+ [
+ {
+  "key": "E",
+  "text": "Evolution"
+ },
+ {
+  "key": "T",
+  "text": "Technical problem"
+ },
+ {
+  "key": "C",
+  "text": "Scope change"
+ },
+ {
+  "key": "A",
+  "text": "Analysis"
+ }
  ]
  
 }
