@@ -4,64 +4,39 @@
 		<pages>
 				<Page id="Proj_page" title=" Project Master" showNavButton="true" navButtonPress="fGoToProj_1" showHeader="true" enableScrolling="true" showFooter="false">
 				<content>
+				<Button icon="sap-icon://edit" text="Change" press="fChangeProj" visible="true" id="idProjChange" />
+				<Button icon="sap-icon://delete" text="Delete" visible="true" id="idProjDelete" press="fDeleteProjEntry" />
 				   <table:Table id="Proj_Table" rows="{/ProjMasterSet}" selectionMode="Single" visibleRowCount="7" ariaLabelledBy="title" enableColumnReordering="true">
-						<table:toolbar id="Proj_Toolbar">
-			            <Toolbar>
-			                <content>
-			                <Title id="title" text="Project Master"/>
-							<ToolbarSpacer/>
-							<Button icon="sap-icon://create" text="Copy" press="fGoToProjCopy" visible="true" id="idProjCopy" />
-							<Button icon="sap-icon://edit" text="Change" press="fChangeProj" visible="true" id="idProjChange" />
-								<!--tooltip="show context of latest selection item"-->
-								<!--press="getContextByIndex"/>-->
-							<!--<Button icon="sap-icon://delete" text="Delete" visible="true" id="idProjDelete" press="fDeleteProjEntry" />-->
-							<Button icon="sap-icon://save" text="Save" visible="false" id="idProjSave" press="fSaveChangeProj"/>
-							<Button icon="sap-icon://cancel" text="Cancel" visible="false" id="idProjCancel" press="fCancelFromProj"/>
-								<!--tooltip="clear selection"-->
-								<!--press="clearSelection"/>-->
-			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Create" width="100px" id="__button3" press="fCreate_Trans" icon="sap-icon://create"/>-->
-			                    <!--<Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Change" width="100px" id="__button3_copy" icon="sap-icon://edit" press="fChange_Trans"/><Button text="Delete" width="100px" id="__button1" press="fDelete_Trans" icon="sap-icon://delete"/>-->
-			                </content>
-			            </Toolbar>
-			        </table:toolbar>
-			        
 			<table:columns>
-				
-				<table:Column width="20rem">
-						<Label text="Project Master Id"/>
+				<table:Column width="11rem">
+						<Label text="Project Id"/>
 						<table:template>
-							<Input value="{ZprojId}" editable="false"/>
-						</table:template>
-					</table:Column>	
-					
+							<Text id = "idZprojId" text="{ZprojId}" />
+						</table:template>	
+				</table:Column>
 				<table:Column width="11rem">
 						<Label text="Description"/>
 						<table:template>
-							<Input value="{ZprDesc}" editable="false"/>
+							<Text id = "idZprDesc" text="{ZprDesc}" />
 						</table:template>
 					</table:Column>	
 					
 				<table:Column width="11rem">
 						<Label text="Project Start date"/>
 						<table:template>
-							<Input value="{ZprStdate}" editable="false"/>
-						<!--"{path : 'ZprStdate',-->
-      <!--                                   type : 'sap.ui.model.type.Date',-->
-      <!--                                   formatOptions: {    pattern:'yyyy-MM-dd',-->
-      <!--                                                       style :'short'}-->
-      <!--                                                       }" editable="false" />-->
+							<Text id = "idZprStDate" text= "{path:'ZprStdate', 
+										  type: 'sap.ui.model.odata.type.DateTime',
+										  constraints: {displayFormat: 'Date' 												}
+										  }"/>
 						</table:template>
 					</table:Column>		
 					
 				<table:Column width="11rem">
 						<Label text="Project End date"/>
 						<table:template>
-							<Input value="{ZprEndate}" editable="false"/>
-							<!--"{path : 'ZprEndate',-->
-       <!--                                  type : 'sap.ui.model.type.Date',-->
-       <!--                                  formatOptions: {    pattern:'yyyy-MM-dd',-->
-       <!--                                                      style :'short'}-->
-       <!--                                                      }" editable="false" />-->
+							<Text id = "idZprEntDate"  text= "{path:'ZprEndate', 
+										  type: 'sap.ui.model.odata.type.DateTime',
+										  constraints: {displayFormat: 'Date'}}"/>
 						</table:template>
 					</table:Column>		
 			</table:columns>
