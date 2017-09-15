@@ -79,7 +79,6 @@ sap.ui.define([
 						
 				// 		oView.byId("inPlanStartCo").setValueState(sap.ui.core.ValueState.None);
 				// 		oView.byId("inPlanStartCo").destroyTooltip();
-						
 
 				// 		oView.byId("inPlanEndCo").setValueState(sap.ui.core.ValueState.None);
 				// 		oView.byId("inPlanEndCo").destroyTooltip();
@@ -271,6 +270,70 @@ sap.ui.define([
 			
 			oModel.setProperty("/TechTrackerSet", this.aDevMasterSet);
 			this.rebindTable();
+						// 			oView.byId("inProjectIdCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inProjectIdCo").destroyTooltip();
+						
+						// oView.byId("inTeamCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inTeamCo").destroyTooltip();
+						
+						// oView.byId("inDomainCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inDomainCo").destroyTooltip();
+						
+						// oView.byId("inSpecNameCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inSpecNameCo").destroyTooltip();
+						
+						// oView.byId("inTicketCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inTicketCo").destroyTooltip();
+					
+						
+						// oView.byId("inCategoryCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inCategoryCo").destroyTooltip();
+						
+						
+						// oView.byId("inDevScopeCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inDevScopeCo").destroyTooltip();
+						
+					
+						// oView.byId("inDevStatusCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inDevStatusCo").destroyTooltip();
+						
+						// oView.byId("inDeveloperCo").setValueState(sap.ui.core.ValueState.None);
+				  //   	oView.byId("inDeveloperCo").destroyTooltip();
+						
+						// oView.byId("inAssignedByCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inAssignedByCo").destroyTooltip();
+						
+
+						// oView.byId("inDevTypeCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inDevTypeCo").destroyTooltip();
+						
+						// oView.byId("inAssignedDateCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inAssignedDateCo").destroyTooltip();
+						
+						
+						// oView.byId("inPlanStartCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inPlanStartCo").destroyTooltip();
+
+						// oView.byId("inPlanEndCo").setValueState(sap.ui.core.ValueState.None);
+						// oView.byId("inPlanEndCo").destroyTooltip();
+						// // oView.byId("vtestingDays").setValue("");
+						// // // oView.byId("vtestingDays").setValueState(sap.ui.core.ValueState.None);
+						// // // oView.byId("vtestingDays").destroyTooltip();
+						// // oView.byId("vreviewDays").setValue("");
+						// // oView.byId("vabapWorkload").setValue("");
+						
+						
+				     	
+				  ////   	oView.byId("vpriority").setValue("");
+						// // oView.byId("vpriority").setValueState(sap.ui.core.ValueState.None);
+						// // oView.byId("vpriority").destroyTooltip();
+				     	
+				  ////   	oView.byId("vcomplexity").setValue("");
+						// // // oView.byId("vcomplexity").setValueState(sap.ui.core.ValueState.None);
+						// // // oView.byId("vcomplexity").destroyTooltip();
+						
+						// // oView.byId("vdevstatus").setValue("");
+				
 			},
 			onCloseDialog_Change : function () 
 			{
